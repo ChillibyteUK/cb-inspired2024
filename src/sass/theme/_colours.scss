@@ -1,0 +1,47 @@
+.has-primary-400-color {
+    color: var(--col-primary-400) !important;
+}
+.has-secondary-400-color {
+    color: var(--col-secondary-400) !important;
+}
+.has-accent-400-color {
+    color: var(--col-accent-400) !important;
+}
+
+.has-primary-400-background-color {
+    background-color: var(--col-primary-400);
+}
+
+.has-secondary-400-background-color {
+    background-color: var(--col-secondary-400);
+}
+
+.has-grey-background-color {
+    background-color: var(--col-grey);
+}
+
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, .h99 {
+    span {
+        color: var(--col-primary-400);
+    }
+}
+
+.has-bg--light {
+    background-image: url(../img/flower-bg.svg);
+    background-repeat: repeat;
+    background-size: 75%;
+    background-position: center;
+}
+.has-bg--light-wo {
+    background-image: url(../img/flower-bg--wo.svg);
+    background-repeat: repeat;
+    background-size: 75%;
+    background-position: center;
+}
+.has-bg--light-sm {
+    background-image: url(../img/flower-bg.svg);
+    background-repeat: repeat;
+    background-size: 25%;
+    background-position: center;
+}

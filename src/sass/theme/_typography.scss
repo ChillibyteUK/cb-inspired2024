@@ -1,0 +1,109 @@
+/* figtree-300 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/figtree-v5-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* figtree-600 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/figtree-v5-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* playfair-display-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/playfair-display-v36-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+    font-variant-ligatures: none;
+}
+
+html {
+    // font-size: var(--fs-400);
+    font-size: 18px;
+}
+
+body {
+    font-family: var(--ff-body);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-400);
+    line-height: 1.556;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, .h99 {
+    font-family: var(--ff-title);
+    font-style: normal;
+    margin-bottom: 0.5rem;
+    font-weight: var(--fw-600);
+    color: var(--col-primary-400);
+    text-wrap: balance;
+}
+
+h1, .h1 {
+    font-size: var(--fs-900);
+}
+h2, .h2 {
+    font-size: var(--fs-800);
+}
+h3, .h3 {
+    font-size: var(--fs-700);
+}
+h4, .h4 {
+    font-size: var(--fs-600);
+}
+h5, .h5 {
+    font-size: var(--fs-500);
+}
+
+.underline {
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--col-accent-400);
+}
+
+strong, b {
+    font-weight: var(--fw-900);
+}
+
+.w-constrained {
+    max-width: 90ch;
+    margin-inline: auto
+}
+.w-constrained--inner > * {
+    max-width: 90ch;
+    margin-inline: auto
+}
+
+.has-small-font-size {
+    font-size: var(--fs-200);
+}
+
+.preTitle {
+    font-size: var(--fs-300);
+    text-transform: uppercase;
+    font-family: var(--ff-title);
+    letter-spacing: 0.1em;
+}
+
+.ff-title {
+    font-family: var(--ff-title);
+}
+
+
+.animtitle, .split-line {
+    overflow:hidden;
+    // perspective: 400;
+}

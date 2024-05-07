@@ -1,0 +1,36 @@
+.blog {
+    &__image {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+.blog_card {
+    display: block;
+    background-color: var(--col-grey);
+    color: var(--body-color);
+    margin-bottom: 1rem;
+    img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+    }
+    &__content {
+        padding: 0.5rem 1rem;
+    }
+    &__title {
+        font-size: var(--fs-400);
+    }
+}
+
+.p-top {
+    padding-top: 4rem;
+}
+
+.related {
+    position: sticky;
+    top: 4rem;
+}

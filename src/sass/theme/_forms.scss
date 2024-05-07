@@ -1,0 +1,123 @@
+.fieldset-cf7mls-wrapper {
+    p {
+        display: none;
+    }
+    button,
+    .wpcf7-form-control.wpcf7-submit.has-spinner {
+        @extend .btn;
+        @extend .btn-primary;
+        margin-bottom: 0 !important;
+        font-weight: var(--fw-600) !important;
+        padding: 0.5rem 2rem !important;
+        display: block;
+        width: 100%;
+    }
+    .cf7mls_back {
+        display: none;
+    }
+}
+form .wpcf7-response-output {
+    margin-top: 0 !important;
+}
+
+.wpcf7-acceptance {
+    .wpcf7-list-item {
+        margin-left: 0;
+        label {
+            display: flex;
+            gap: 0.5rem;
+        }
+    }
+    input[type=checkbox] {
+        @extend .form-check-input;
+        margin-inline: 0.25rem;
+    }
+    label {
+        font-size: var(--fs-300);
+    }
+}
+
+fieldset.cols-md-3 .gfield_checkbox {
+    @media (min-width:992px) {
+        columns: 3;
+    }
+}
+fieldset.cols-md-2 .gfield_checkbox {
+    @media (min-width:992px) {
+        columns: 2;
+    }
+}
+
+
+.form-control {
+    font-weight: 300;
+    font-size: 0.889rem;
+}
+
+// .gform_wrapper form {
+//     max-width: 768px;
+//     margin: auto;
+// }
+// .gform_fields {
+//     list-style-type: none;
+//     margin-right: -15px;
+//     margin-left: -15px;
+//     padding: 0;
+// }
+
+// .gfield {
+//     margin-bottom: 15px;
+//     padding-right: 15px;
+//     padding-left: 15px;
+// }
+
+.gform_wrapper.gravity-theme input[type=text],
+.gform_wrapper.gravity-theme input[type=email],
+.gform_wrapper.gravity-theme input[type=tel],
+.gform_wrapper.gravity-theme input[type=number],
+.gform_wrapper.gravity-theme textarea {
+    @extend .form-control;
+}
+
+.gform_wrapper select {
+    @extend .form-select;
+}
+
+.gfield textarea {
+    height: 100px;
+}
+
+.validation_error,
+.gfield_error .validation_message {
+	color: crimson;
+}
+
+.validation_error,
+.gform_confirmation_message {
+	font-size: 18px;
+}
+
+.gfield_error .validation_message {
+	margin-top: 5px;
+}
+
+.gfield_error select,
+.gfield_error textarea,
+.gfield_error input {
+    border-color: crimson;
+}
+
+// body .gform_wrapper .gform_body .gform_fields 
+.gfield textarea.large { height: 200px !important; }
+
+body .gform_wrapper .gform_footer button,
+.gfield_choice_all_toggle {
+    @extend .btn;
+    @extend .btn-primary;
+}
+
+// .gfield_checkbox,
+// .gfield_radio {
+//     display: flex;
+//     justify-content: space-around;
+// }

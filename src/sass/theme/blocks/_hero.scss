@@ -1,0 +1,90 @@
+.full-hero {
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate; 
+
+    color: #fff;
+
+    display: grid;
+    place-content: center;
+
+    &__inner {
+        width: min(800px,90vw);
+        padding-top: 4rem;
+        padding: 2rem;
+        position: relative;
+        font-size: 1rem;
+    }
+
+    img {
+        margin-bottom: 2rem;
+        width: 80px;
+        display: block;
+        margin-inline: auto;
+    }
+    
+    h1 {
+        color: #fff;
+        font-size: var(--fs-800);
+        font-weight: var(--fw-400);
+        font-family: var(--ff-body);
+        line-height: 1.1;
+        text-wrap: balance;
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+        // padding-left: 1rem;
+    }
+
+    h2 {
+        color: #fff;
+        font-size: var(--fs-500);
+        font-weight: var(--fw-400);
+        font-family: var(--ff-body);
+        line-height: 1.1;
+        text-wrap: balance;
+        margin-bottom: 0.5rem;
+    }
+
+    .carousel {
+        z-index: -1;
+        position: absolute;
+        inset: 0;
+    }
+    .carousel, .carousel-inner {
+        min-height: 100vh;
+        height: 100%;
+    }
+    .carousel-item {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        height: 100%;
+    }
+
+}
+
+.short-hero {
+    min-height: 50vh;
+    position: relative;
+    isolation: isolate;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    margin-bottom: 3rem;
+
+    h1 {
+        color: #fff;
+        font-size: var(--fs-900);
+        font-weight: var(--fw-400);
+        font-family: var(--ff-title);
+        line-height: 1.1;
+        text-align: start;
+        text-wrap: balance;
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+        // padding-left: 1rem;
+    }
+}
