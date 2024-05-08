@@ -2,9 +2,10 @@
 // $f = get_the_post_thumbnail_url(get_the_ID(), 'full') ?: 'NOPE';
 $img = wp_get_attachment_image_url(get_field('background'), 'full'); // ?: $f;
 $class = $block['className'] ?? null;
+$y = get_field('align_y') ?? '50%';
 ?>
 <section class="short-hero d-flex <?=$class?>"
-    style="background-image:url(<?=$img?>)">
+    style="background-image:url(<?=$img?>);background-position-y:<?=$y?>">
     <div class="container-xl d-flex flex-column justify-content-center">
         <div class="row">
             <div class="col-md-6 position-relative">

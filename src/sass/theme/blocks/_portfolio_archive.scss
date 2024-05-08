@@ -1,0 +1,75 @@
+.portfolio-archive {
+    &__grid {
+        display: grid;
+        @media (min-width:768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        gap: 2rem;
+    }
+    .portfolio__card {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        display: block;
+        img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        h2 {
+            position: absolute;
+            bottom: 0.5rem;
+            left: 0.5rem;
+            right: 0.5rem;
+            background-color: hsl( var(--hsl-grey) / 0.6 );
+            margin-bottom: 0;
+            padding: 0.25rem 0.5rem 0.5rem 0.25rem;
+            font-size: var(--fs-600);
+            display: inline-block;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: background-color var(--transition);
+        }
+        &:hover {
+            h2 {
+                background-color: hsl( var(--hsl-grey) / 1 );
+            }
+        }
+    }
+}
+
+.gallery {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    a {
+        position: relative;
+        &::after {
+            content: "\f065";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1;
+            color: white;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            opacity: 0;
+            transition: opacity var(--transition);
+            background-color: hsl( 0 0% 0% / 0.6 );
+            width: 40px;
+            height: 40px;
+            border-radius: 0.25rem;
+            display: grid;
+            place-content: center;
+        }
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

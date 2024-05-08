@@ -4,8 +4,6 @@ defined('ABSPATH') || exit;
 
 // require_once CB_THEME_DIR . '/inc/cb-noblog.php';
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
-require_once CB_THEME_DIR . '/inc/cb-posttypes.php';
-require_once CB_THEME_DIR . '/inc/cb-taxonomies.php';
 require_once CB_THEME_DIR . '/inc/cb-form.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 
@@ -143,20 +141,22 @@ function cb_dashboard_widget_display()
 }
 
 
-// add_filter('wpseo_breadcrumb_links', function( $links ) {
-//     global $post;
-//     if ( is_singular( 'post' ) ) {
-//         $t = get_the_category($post->ID);
-//         $breadcrumb[] = array(
-//             'url' => '/guides/',
-//             'text' => 'Guides',
-//         );
+add_filter(
+    'wpseo_breadcrumb_links',
+    function ($links) {
+        global $post;
+        if (is_singular('portfolio')) {
+            $t = get_the_category($post->ID);
+            $breadcrumb[] = array(
+                'url' => '/portfolio/',
+                'text' => 'Portfolio',
+            );
 
-//         array_splice( $links, 1, -2, $breadcrumb );
-//     }
-//     return $links;
-// }
-// );
+            array_splice($links, 1, -2, $breadcrumb);
+        }
+        return $links;
+    }
+);
 
 // remove discussion metabox
 function cc_gutenberg_register_files()
@@ -272,7 +272,8 @@ add_shortcode('email_btn', function () {
 
 
 // cb branding on wp-login.php
-function custom_login_logo() {
+function custom_login_logo()
+{
     $custom_logo_url = '/wp-content/themes/cb-inspired2024/img/cb-full.jpg';
     echo '
         <style type="text/css">
