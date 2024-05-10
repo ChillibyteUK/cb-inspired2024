@@ -2,7 +2,7 @@
     <div class="container-xl">
         <div class="row g-4">
             <div class="col-md-6">
-                <h2><?=get_field('title')?>
+                <h2><?=get_field('title')?></h2>
                 <div><?=get_field('intro')?></div>
                 <h3 class="h4 mb-4">Email</h3>
                 <ul class="fa-ul">
