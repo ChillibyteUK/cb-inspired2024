@@ -14,8 +14,6 @@
                             href="tel:<?=parse_phone(get_field('contact_emily', 'options'))?>"><?=get_field('contact_emily', 'options')?></a>
                     </li>
                 </ul>
-            </div>
-            <div class="col-md-6">
                 <h2 class="h4 mb-4">Connect</h2>
                 <div class="contact__socials">
                     <?php
@@ -25,6 +23,9 @@
                     <a href="<?=$s['facebook_url']?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="<?=$s['linkedin_url']?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
+            </div>
+            <div class="col-md-6">
+                <?=do_shortcode('[gravityform id="' . get_field('form_id') . '" title="false"]')?>
             </div>
         </div>
     </div>
