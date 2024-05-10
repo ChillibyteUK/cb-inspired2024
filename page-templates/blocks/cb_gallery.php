@@ -1,5 +1,6 @@
 <section class="the_gallery">
     <div class="container-xl py-5">
+        <div class="the_gallery__grid">
         <?php
         if (get_field('gallery') ?? null) {
             foreach (get_field('gallery') as $g) {
@@ -11,6 +12,7 @@
             }
         }
         ?>
+        </div>
     </div>
 </section>
 <?php
