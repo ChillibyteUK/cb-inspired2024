@@ -21197,7 +21197,7 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
 }
 
 .gform_fields {
-  row-gap: 1rem;
+  row-gap: 1rem !important;
 }
 
 .gfield textarea {
