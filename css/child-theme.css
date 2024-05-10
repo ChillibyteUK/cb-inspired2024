@@ -21597,6 +21597,43 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   object-fit: cover;
 }
 
+.the_gallery__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.the_gallery__grid a {
+  position: relative;
+}
+.the_gallery__grid a::after {
+  content: "\f065";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 40px;
+  height: 40px;
+  border-radius: 0.25rem;
+  display: grid;
+  place-content: center;
+}
+.the_gallery__grid a:hover::after {
+  opacity: 1;
+}
+.the_gallery__grid img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 .wp-block-quote {
   position: relative;
   padding: 2rem;
