@@ -69,7 +69,7 @@ fieldset.cols-md-2 .gfield_checkbox {
 // body .gform_wrapper .gform_body .gform_fields 
 .gfield textarea.large { height: 200px !important; }
 
-body .gform_wrapper .gform_footer button,
+body .gform_wrapper .gform_footer button[type='submit'],
 .gfield_choice_all_toggle {
     @extend .btn;
     @extend .btn-primary;

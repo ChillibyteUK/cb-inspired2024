@@ -2667,8 +2667,8 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.btn-check[disabled] + .btn, body .gform_wrapper .gform_footer .btn-check[disabled] + button,
-.btn-check[disabled] + .gfield_choice_all_toggle, .btn-check:disabled + .btn, body .gform_wrapper .gform_footer .btn-check:disabled + button,
+.btn-check[disabled] + .btn, body .gform_wrapper .gform_footer .btn-check[disabled] + button[type=submit],
+.btn-check[disabled] + .gfield_choice_all_toggle, .btn-check:disabled + .btn, body .gform_wrapper .gform_footer .btn-check:disabled + button[type=submit],
 .btn-check:disabled + .gfield_choice_all_toggle {
   pointer-events: none;
   filter: none;
@@ -2919,12 +2919,12 @@ textarea.form-control-lg {
 .gform_wrapper .input-group > select:focus {
   z-index: 3;
 }
-.input-group .btn, .input-group body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .input-group button,
+.input-group .btn, .input-group body .gform_wrapper .gform_footer button[type=submit], body .gform_wrapper .gform_footer .input-group button[type=submit],
 .input-group .gfield_choice_all_toggle {
   position: relative;
   z-index: 2;
 }
-.input-group .btn:focus, .input-group body .gform_wrapper .gform_footer button:focus, body .gform_wrapper .gform_footer .input-group button:focus,
+.input-group .btn:focus, .input-group body .gform_wrapper .gform_footer button[type=submit]:focus, body .gform_wrapper .gform_footer .input-group button[type=submit]:focus,
 .input-group .gfield_choice_all_toggle:focus {
   z-index: 3;
 }
@@ -2954,7 +2954,7 @@ textarea.form-control-lg {
 .gform_wrapper .input-group-lg > select,
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
-body .gform_wrapper .gform_footer .input-group-lg > button,
+body .gform_wrapper .gform_footer .input-group-lg > button[type=submit],
 .input-group-lg > .gfield_choice_all_toggle {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
@@ -2971,7 +2971,7 @@ body .gform_wrapper .gform_footer .input-group-lg > button,
 .gform_wrapper .input-group-sm > select,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
-body .gform_wrapper .gform_footer .input-group-sm > button,
+body .gform_wrapper .gform_footer .input-group-sm > button[type=submit],
 .input-group-sm > .gfield_choice_all_toggle {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
@@ -5108,7 +5108,7 @@ body .gform_wrapper .gform_footer .input-group-sm > button,
   background-color: currentColor;
   opacity: 0.5;
 }
-.placeholder.btn::before, body .gform_wrapper .gform_footer button.placeholder::before,
+.placeholder.btn::before, body .gform_wrapper .gform_footer button.placeholder[type=submit]::before,
 .placeholder.gfield_choice_all_toggle::before {
   display: inline-block;
   content: "";
@@ -21059,7 +21059,7 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   opacity: 0.8;
 }
 
-.btn, body .gform_wrapper .gform_footer button,
+.btn, body .gform_wrapper .gform_footer button[type=submit],
 .gfield_choice_all_toggle {
   display: inline-block;
   border: none;
@@ -21074,7 +21074,7 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   font-weight: var(--fw-900);
 }
 
-.btn-primary, body .gform_wrapper .gform_footer button,
+.btn-primary, body .gform_wrapper .gform_footer button[type=submit],
 .gfield_choice_all_toggle {
   background-color: var(--col-primary-400);
   color: white;
