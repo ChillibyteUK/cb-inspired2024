@@ -2574,12 +2574,12 @@ textarea.form-control-lg {
   padding-left: 1.5em;
   margin-bottom: 0.125rem;
 }
-.form-check .form-check-input, .form-check .wpcf7-acceptance input[type=checkbox], .wpcf7-acceptance .form-check input[type=checkbox] {
+.form-check .form-check-input {
   float: left;
   margin-left: -1.5em;
 }
 
-.form-check-input, .wpcf7-acceptance input[type=checkbox] {
+.form-check-input {
   width: 1em;
   height: 1em;
   margin-top: 0.25em;
@@ -2595,48 +2595,48 @@ textarea.form-control-lg {
   -webkit-print-color-adjust: exact;
   color-adjust: exact;
 }
-.form-check-input[type=checkbox], .wpcf7-acceptance input[type=checkbox] {
+.form-check-input[type=checkbox] {
   border-radius: 0.25em;
 }
-.form-check-input[type=radio], .wpcf7-acceptance input[type=radio][type=checkbox] {
+.form-check-input[type=radio] {
   border-radius: 50%;
 }
-.form-check-input:active, .wpcf7-acceptance input[type=checkbox]:active {
+.form-check-input:active {
   filter: brightness(90%);
 }
-.form-check-input:focus, .wpcf7-acceptance input[type=checkbox]:focus {
+.form-check-input:focus {
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-.form-check-input:checked, .wpcf7-acceptance input[type=checkbox]:checked {
+.form-check-input:checked {
   background-color: #0d6efd;
   border-color: #0d6efd;
 }
-.form-check-input:checked[type=checkbox], .wpcf7-acceptance input:checked[type=checkbox] {
+.form-check-input:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
-.form-check-input:checked[type=radio], .wpcf7-acceptance input[type=checkbox]:checked[type=radio] {
+.form-check-input:checked[type=radio] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
 }
-.form-check-input[type=checkbox]:indeterminate, .wpcf7-acceptance input[type=checkbox]:indeterminate {
+.form-check-input[type=checkbox]:indeterminate {
   background-color: #0d6efd;
   border-color: #0d6efd;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
-.form-check-input:disabled, .wpcf7-acceptance input[type=checkbox]:disabled {
+.form-check-input:disabled {
   pointer-events: none;
   filter: none;
   opacity: 0.5;
 }
-.form-check-input[disabled] ~ .form-check-label, .wpcf7-acceptance input[disabled][type=checkbox] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label, .wpcf7-acceptance input[type=checkbox]:disabled ~ .form-check-label {
+.form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
   opacity: 0.5;
 }
 
 .form-switch {
   padding-left: 2.5em;
 }
-.form-switch .form-check-input, .form-switch .wpcf7-acceptance input[type=checkbox], .wpcf7-acceptance .form-switch input[type=checkbox] {
+.form-switch .form-check-input {
   width: 2em;
   margin-left: -2.5em;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
@@ -2645,14 +2645,14 @@ textarea.form-control-lg {
   transition: background-position 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-switch .form-check-input, .form-switch .wpcf7-acceptance input[type=checkbox], .wpcf7-acceptance .form-switch input[type=checkbox] {
+  .form-switch .form-check-input {
     transition: none;
   }
 }
-.form-switch .form-check-input:focus, .form-switch .wpcf7-acceptance input[type=checkbox]:focus, .wpcf7-acceptance .form-switch input[type=checkbox]:focus {
+.form-switch .form-check-input:focus {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2386b7fe'/%3e%3c/svg%3e");
 }
-.form-switch .form-check-input:checked, .form-switch .wpcf7-acceptance input[type=checkbox]:checked, .wpcf7-acceptance .form-switch input[type=checkbox]:checked {
+.form-switch .form-check-input:checked {
   background-position: right center;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }
@@ -2668,10 +2668,8 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 .btn-check[disabled] + .btn, body .gform_wrapper .gform_footer .btn-check[disabled] + button,
-.btn-check[disabled] + .gfield_choice_all_toggle, .fieldset-cf7mls-wrapper .btn-check[disabled] + button,
-.fieldset-cf7mls-wrapper .btn-check[disabled] + .wpcf7-form-control.wpcf7-submit.has-spinner, .btn-check:disabled + .btn, body .gform_wrapper .gform_footer .btn-check:disabled + button,
-.btn-check:disabled + .gfield_choice_all_toggle, .fieldset-cf7mls-wrapper .btn-check:disabled + button,
-.fieldset-cf7mls-wrapper .btn-check:disabled + .wpcf7-form-control.wpcf7-submit.has-spinner {
+.btn-check[disabled] + .gfield_choice_all_toggle, .btn-check:disabled + .btn, body .gform_wrapper .gform_footer .btn-check:disabled + button,
+.btn-check:disabled + .gfield_choice_all_toggle {
   pointer-events: none;
   filter: none;
   opacity: 0.65;
@@ -2922,16 +2920,12 @@ textarea.form-control-lg {
   z-index: 3;
 }
 .input-group .btn, .input-group body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .input-group button,
-.input-group .gfield_choice_all_toggle, .input-group .fieldset-cf7mls-wrapper button, .fieldset-cf7mls-wrapper .input-group button,
-.input-group .fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner,
-.fieldset-cf7mls-wrapper .input-group .wpcf7-form-control.wpcf7-submit.has-spinner {
+.input-group .gfield_choice_all_toggle {
   position: relative;
   z-index: 2;
 }
 .input-group .btn:focus, .input-group body .gform_wrapper .gform_footer button:focus, body .gform_wrapper .gform_footer .input-group button:focus,
-.input-group .gfield_choice_all_toggle:focus, .input-group .fieldset-cf7mls-wrapper button:focus, .fieldset-cf7mls-wrapper .input-group button:focus,
-.input-group .fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner:focus,
-.fieldset-cf7mls-wrapper .input-group .wpcf7-form-control.wpcf7-submit.has-spinner:focus {
+.input-group .gfield_choice_all_toggle:focus {
   z-index: 3;
 }
 
@@ -2961,9 +2955,7 @@ textarea.form-control-lg {
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
 body .gform_wrapper .gform_footer .input-group-lg > button,
-.input-group-lg > .gfield_choice_all_toggle,
-.fieldset-cf7mls-wrapper .input-group-lg > button,
-.fieldset-cf7mls-wrapper .input-group-lg > .wpcf7-form-control.wpcf7-submit.has-spinner {
+.input-group-lg > .gfield_choice_all_toggle {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.3rem;
@@ -2980,9 +2972,7 @@ body .gform_wrapper .gform_footer .input-group-lg > button,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
 body .gform_wrapper .gform_footer .input-group-sm > button,
-.input-group-sm > .gfield_choice_all_toggle,
-.fieldset-cf7mls-wrapper .input-group-sm > button,
-.fieldset-cf7mls-wrapper .input-group-sm > .wpcf7-form-control.wpcf7-submit.has-spinner {
+.input-group-sm > .gfield_choice_all_toggle {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -3104,20 +3094,20 @@ body .gform_wrapper .gform_footer .input-group-sm > button,
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
-.was-validated .form-check-input:valid, .was-validated .wpcf7-acceptance input[type=checkbox]:valid, .wpcf7-acceptance .was-validated input[type=checkbox]:valid, .form-check-input.is-valid, .wpcf7-acceptance input.is-valid[type=checkbox] {
+.was-validated .form-check-input:valid, .form-check-input.is-valid {
   border-color: #198754;
 }
-.was-validated .form-check-input:valid:checked, .was-validated .wpcf7-acceptance input[type=checkbox]:valid:checked, .wpcf7-acceptance .was-validated input[type=checkbox]:valid:checked, .form-check-input.is-valid:checked, .wpcf7-acceptance input.is-valid[type=checkbox]:checked {
+.was-validated .form-check-input:valid:checked, .form-check-input.is-valid:checked {
   background-color: #198754;
 }
-.was-validated .form-check-input:valid:focus, .was-validated .wpcf7-acceptance input[type=checkbox]:valid:focus, .wpcf7-acceptance .was-validated input[type=checkbox]:valid:focus, .form-check-input.is-valid:focus, .wpcf7-acceptance input.is-valid[type=checkbox]:focus {
+.was-validated .form-check-input:valid:focus, .form-check-input.is-valid:focus {
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
-.was-validated .form-check-input:valid ~ .form-check-label, .was-validated .wpcf7-acceptance input[type=checkbox]:valid ~ .form-check-label, .wpcf7-acceptance .was-validated input[type=checkbox]:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label, .wpcf7-acceptance input.is-valid[type=checkbox] ~ .form-check-label {
+.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
   color: #198754;
 }
 
-.form-check-inline .form-check-input ~ .valid-feedback, .form-check-inline .wpcf7-acceptance input[type=checkbox] ~ .valid-feedback, .wpcf7-acceptance .form-check-inline input[type=checkbox] ~ .valid-feedback {
+.form-check-inline .form-check-input ~ .valid-feedback {
   margin-left: 0.5em;
 }
 
@@ -3274,20 +3264,20 @@ body .gform_wrapper .gform_footer .input-group-sm > button,
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 
-.was-validated .form-check-input:invalid, .was-validated .wpcf7-acceptance input[type=checkbox]:invalid, .wpcf7-acceptance .was-validated input[type=checkbox]:invalid, .form-check-input.is-invalid, .wpcf7-acceptance input.is-invalid[type=checkbox] {
+.was-validated .form-check-input:invalid, .form-check-input.is-invalid {
   border-color: #dc3545;
 }
-.was-validated .form-check-input:invalid:checked, .was-validated .wpcf7-acceptance input[type=checkbox]:invalid:checked, .wpcf7-acceptance .was-validated input[type=checkbox]:invalid:checked, .form-check-input.is-invalid:checked, .wpcf7-acceptance input.is-invalid[type=checkbox]:checked {
+.was-validated .form-check-input:invalid:checked, .form-check-input.is-invalid:checked {
   background-color: #dc3545;
 }
-.was-validated .form-check-input:invalid:focus, .was-validated .wpcf7-acceptance input[type=checkbox]:invalid:focus, .wpcf7-acceptance .was-validated input[type=checkbox]:invalid:focus, .form-check-input.is-invalid:focus, .wpcf7-acceptance input.is-invalid[type=checkbox]:focus {
+.was-validated .form-check-input:invalid:focus, .form-check-input.is-invalid:focus {
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
-.was-validated .form-check-input:invalid ~ .form-check-label, .was-validated .wpcf7-acceptance input[type=checkbox]:invalid ~ .form-check-label, .wpcf7-acceptance .was-validated input[type=checkbox]:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label, .wpcf7-acceptance input.is-invalid[type=checkbox] ~ .form-check-label {
+.was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
   color: #dc3545;
 }
 
-.form-check-inline .form-check-input ~ .invalid-feedback, .form-check-inline .wpcf7-acceptance input[type=checkbox] ~ .invalid-feedback, .wpcf7-acceptance .form-check-inline input[type=checkbox] ~ .invalid-feedback {
+.form-check-inline .form-check-input ~ .invalid-feedback {
   margin-left: 0.5em;
 }
 
@@ -5119,8 +5109,7 @@ body .gform_wrapper .gform_footer .input-group-sm > button,
   opacity: 0.5;
 }
 .placeholder.btn::before, body .gform_wrapper .gform_footer button.placeholder::before,
-.placeholder.gfield_choice_all_toggle::before, .fieldset-cf7mls-wrapper button.placeholder::before,
-.fieldset-cf7mls-wrapper .placeholder.wpcf7-form-control.wpcf7-submit.has-spinner::before {
+.placeholder.gfield_choice_all_toggle::before {
   display: inline-block;
   content: "";
 }
@@ -21071,8 +21060,7 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
 }
 
 .btn, body .gform_wrapper .gform_footer button,
-.gfield_choice_all_toggle, .fieldset-cf7mls-wrapper button,
-.fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner {
+.gfield_choice_all_toggle {
   display: inline-block;
   border: none;
 }
@@ -21087,8 +21075,7 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
 }
 
 .btn-primary, body .gform_wrapper .gform_footer button,
-.gfield_choice_all_toggle, .fieldset-cf7mls-wrapper button,
-.fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner {
+.gfield_choice_all_toggle {
   background-color: var(--col-primary-400);
   color: white;
   padding: 0.5rem 1.5rem;
@@ -21183,39 +21170,6 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   position: -webkit-sticky;
   position: sticky;
   top: 4rem;
-}
-
-.fieldset-cf7mls-wrapper p {
-  display: none;
-}
-.fieldset-cf7mls-wrapper button,
-.fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner {
-  margin-bottom: 0 !important;
-  font-weight: var(--fw-600) !important;
-  padding: 0.5rem 2rem !important;
-  display: block;
-  width: 100%;
-}
-.fieldset-cf7mls-wrapper .cf7mls_back {
-  display: none;
-}
-
-form .wpcf7-response-output {
-  margin-top: 0 !important;
-}
-
-.wpcf7-acceptance .wpcf7-list-item {
-  margin-left: 0;
-}
-.wpcf7-acceptance .wpcf7-list-item label {
-  display: flex;
-  gap: 0.5rem;
-}
-.wpcf7-acceptance input[type=checkbox] {
-  margin-inline: 0.25rem;
-}
-.wpcf7-acceptance label {
-  font-size: var(--fs-300);
 }
 
 @media (min-width: 992px) {
