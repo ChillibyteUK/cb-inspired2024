@@ -3,7 +3,7 @@
         <div class="row g-4">
             <div class="col-md-6">
                 <h2><?=get_field('title')?></h2>
-                <div classs="mb-4"><?=get_field('intro')?></div>
+                <div class="mb-4"><?=get_field('intro')?></div>
                 <h3 class="h4 mb-4">Email</h3>
                 <ul class="fa-ul">
                     <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-envelope"></i></span> <a
