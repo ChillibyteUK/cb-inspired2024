@@ -1,5 +1,5 @@
 <section class="contact">
-    <div class="container-xl">
+    <div class="container-xl pb-5">
         <div class="row g-4">
             <div class="col-md-6">
                 <h2><?=get_field('title')?></h2>
