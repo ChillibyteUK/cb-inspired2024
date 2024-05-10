@@ -21196,6 +21196,10 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   font-size: 0.889rem;
 }
 
+.gform_fields {
+  row-gap: 1rem;
+}
+
 .gfield textarea {
   height: 100px;
 }

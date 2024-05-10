@@ -19,12 +19,10 @@ fieldset.cols-md-2 .gfield_checkbox {
 //     max-width: 768px;
 //     margin: auto;
 // }
-// .gform_fields {
-//     list-style-type: none;
-//     margin-right: -15px;
-//     margin-left: -15px;
-//     padding: 0;
-// }
+
+.gform_fields {
+    row-gap: 1rem;
+}
 
 // .gfield {
 //     margin-bottom: 15px;
