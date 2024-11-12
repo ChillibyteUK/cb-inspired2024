@@ -1,10 +1,10 @@
 {
-    "key": "group_655b95464b531",
-    "title": "CB Latest News",
+    "key": "group_673366e120e46",
+    "title": "CB Awards Slider",
     "fields": [
         {
-            "key": "field_655b95460b780",
-            "label": "CB Latest News",
+            "key": "field_673366e1c3a2b",
+            "label": "CB Awards Slider",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -26,7 +26,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-latest-news"
+                "value": "acf\/cb-awards"
             }
         ]
     ],
@@ -39,5 +39,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700500834
+    "modified": 1731421938
 }

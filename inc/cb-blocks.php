@@ -3,129 +3,48 @@ function acf_blocks()
 {
     if (function_exists('acf_register_block_type')) {
         acf_register_block_type(array(
-            'name'				=> 'cb_full_hero',
-            'title'				=> __('CB Full Hero'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_full_hero.php',
-            'mode'	=> 'edit',
+            'name'                => 'cb_hero',
+            'title'                => __('CB Hero'),
+            'category'            => 'layout',
+            'icon'                => 'cover-image',
+            'render_template'    => 'page-templates/blocks/cb_hero.php',
+            'mode'    => 'edit',
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
-            'name'				=> 'cb_short_hero',
-            'title'				=> __('CB Short Hero'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_short_hero.php',
-            'mode'	=> 'edit',
+            'name'                => 'cb_split',
+            'title'                => __('CB Split'),
+            'category'            => 'layout',
+            'icon'                => 'cover-image',
+            'render_template'    => 'page-templates/blocks/cb_split.php',
+            'mode'    => 'edit',
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
-            'name'				=> 'cb_text_image',
-            'title'				=> __('CB Text / Image'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_text_image.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false, 'color' => true),
-        ));
-        acf_register_block_type(array(
-            'name'				=> 'cb_image_cta',
-            'title'				=> __('CB Image CTA'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_image_cta.php',
-            'mode'	=> 'edit',
+            'name'                => 'cb_portfolio',
+            'title'                => __('CB Portfolio'),
+            'category'            => 'layout',
+            'icon'                => 'cover-image',
+            'render_template'    => 'page-templates/blocks/cb_portfolio.php',
+            'mode'    => 'edit',
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
-            'name'				=> 'cb_latest_news',
-            'title'				=> __('CB Latest News'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_latest_news.php',
-            'mode'	=> 'edit',
+            'name'                => 'cb_insta_panel',
+            'title'                => __('CB Instagram Panel'),
+            'category'            => 'layout',
+            'icon'                => 'cover-image',
+            'render_template'    => 'page-templates/blocks/cb_insta_panel.php',
+            'mode'    => 'edit',
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
-            'name'				=> 'cb_faq',
-            'title'				=> __('CB FAQs'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_faq.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false),
-        ));
-        acf_register_block_type(array(
-            'name'				=> 'cb_contact',
-            'title'				=> __('CB Contact'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_contact.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false),
-        ));
-        acf_register_block_type(array(
-            'name'				=> 'cb_button_bar',
-            'title'				=> __('CB Buttons'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_button_bar.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false),
-        ));
-        acf_register_block_type(array(
-            'name'				=> 'cb_child_nav',
-            'title'				=> __('CB Child Nav'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_child_nav.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false),
-        ));
-        acf_register_block_type(array(
-            'name'				=> 'cb_divider',
-            'title'				=> __('CB Divider'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_divider.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false),
-        ));
-        acf_register_block_type(array(
-            'name'				=> 'cb_video',
-            'title'				=> __('CB Video'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_video.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false),
-        ));
-        acf_register_block_type(array(
-            'name'				=> 'cb_portfolio_archive',
-            'title'				=> __('CB Portfolio Archive'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_portfolio_archive.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false),
-        ));
-        acf_register_block_type(array(
-            'name'				=> 'cb_breadcrumbs',
-            'title'				=> __('CB Breadcrumbs'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_breadcrumbs.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false),
-        ));
-        acf_register_block_type(array(
-            'name'				=> 'cb_gallery',
-            'title'				=> __('CB Gallery'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_gallery.php',
-            'mode'	=> 'edit',
+            'name'                => 'cb_awards',
+            'title'                => __('CB Awards Slider'),
+            'category'            => 'layout',
+            'icon'                => 'cover-image',
+            'render_template'    => 'page-templates/blocks/cb_awards.php',
+            'mode'    => 'edit',
             'supports' => array('mode' => false),
         ));
     }
@@ -164,10 +83,10 @@ function modify_core_add_container($attributes, $content)
 {
     ob_start();
     // $class = $block['className'];
-    ?>
-<div class="container-xl">
-    <?=$content?>
-</div>
+?>
+    <div class="container-xl">
+        <?= $content ?>
+    </div>
 <?php
     $content = ob_get_clean();
     return $content;
@@ -178,10 +97,10 @@ function modify_core_heading($attributes, $content)
     ob_start();
     $id = strtolower(wp_strip_all_tags($content));
     $id = cbslugify($id);
-    ?>
-<div class="container-xl" id="<?=$id?>">
-    <?=$content?>
-</div>
+?>
+    <div class="container-xl" id="<?= $id ?>">
+        <?= $content ?>
+    </div>
 <?php
     $content = ob_get_clean();
     return $content;

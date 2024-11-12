@@ -2,7 +2,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-// require_once CB_THEME_DIR . '/inc/cb-noblog.php';
+require_once CB_THEME_DIR . '/inc/cb-noblog.php';
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 
@@ -30,38 +30,28 @@ add_filter('theme_page_templates', 'child_theme_remove_page_template');
 function child_theme_remove_page_template($page_templates)
 {
     // unset($page_templates['page-templates/blank.php'],$page_templates['page-templates/empty.php'], $page_templates['page-templates/fullwidthpage.php'], $page_templates['page-templates/left-sidebarpage.php'], $page_templates['page-templates/right-sidebarpage.php'], $page_templates['page-templates/both-sidebarspage.php']);
-    unset($page_templates['page-templates/blank.php'],$page_templates['page-templates/empty.php'], $page_templates['page-templates/left-sidebarpage.php'], $page_templates['page-templates/right-sidebarpage.php'], $page_templates['page-templates/both-sidebarspage.php']);
+    unset($page_templates['page-templates/blank.php'], $page_templates['page-templates/empty.php'], $page_templates['page-templates/left-sidebarpage.php'], $page_templates['page-templates/right-sidebarpage.php'], $page_templates['page-templates/both-sidebarspage.php']);
     return $page_templates;
 }
 add_action('after_setup_theme', 'remove_understrap_post_formats', 11);
 function remove_understrap_post_formats()
 {
-    remove_theme_support('post-formats', array( 'aside', 'image', 'video' , 'quote' , 'link' ));
+    remove_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
 }
 
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page(
         array(
-            'page_title' 	=> 'Site-Wide Settings',
-            'menu_title'	=> 'Site-Wide Settings',
-            'menu_slug' 	=> 'theme-general-settings',
-            'capability'	=> 'edit_posts',
+            'page_title'     => 'Site-Wide Settings',
+            'menu_title'    => 'Site-Wide Settings',
+            'menu_slug'     => 'theme-general-settings',
+            'capability'    => 'edit_posts',
         )
     );
 }
 
 function widgets_init()
 {
-    // register_sidebar(
-    //     array(
-    //         'name'          => __('Footer Col 1', 'cb-inspired2024'),
-    //         'id'            => 'footer-1',
-    //         'description'   => __('Footer Col 1', 'cb-inspired2024'),
-    //         'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
-    //         'after_widget'  => '</div>',
-    //     )
-    // );
-
     register_nav_menus(array(
         'primary_nav' => __('Primary Nav', 'cb-inspired2024'),
         'footer_menu1' => __('Footer Menu 1', 'cb-inspired2024'),
@@ -93,8 +83,8 @@ function widgets_init()
             ),
             array(
                 'name'  => 'Grey',
-                'slug'  => 'has-grey',
-                'color' => '#f5f5f5',
+                'slug'  => 'grey-200',
+                'color' => '#fcf3f1',
             ),
             array(
                 'name'  => 'White',
@@ -123,19 +113,19 @@ function register_cb_dashboard_widget()
 
 function cb_dashboard_widget_display()
 {
-    ?>
-<div style="display: flex; align-items: center; justify-content: space-around;">
-    <img style="width: 50%;"
-        src="<?= get_stylesheet_directory_uri().'/img/cb-full.jpg'; ?>">
-    <a class="button button-primary" target="_blank" rel="noopener nofollow noreferrer"
-        href="mailto:hello@chillibyte.co.uk">Contact</a>
-</div>
-<div>
-    <p><strong>Thanks for choosing Chillibyte!</strong></p>
-    <hr>
-    <p>Got a problem with your site, or want to make some changes & need us to take a look for you?</p>
-    <p>Use the link above to get in touch and we'll get back to you ASAP.</p>
-</div>
+?>
+    <div style="display: flex; align-items: center; justify-content: space-around;">
+        <img style="width: 50%;"
+            src="<?= get_stylesheet_directory_uri() . '/img/cb-full.jpg'; ?>">
+        <a class="button button-primary" target="_blank" rel="noopener nofollow noreferrer"
+            href="mailto:hello@chillibyte.co.uk">Contact</a>
+    </div>
+    <div>
+        <p><strong>Thanks for choosing Chillibyte!</strong></p>
+        <hr>
+        <p>Got a problem with your site, or want to make some changes & need us to take a look for you?</p>
+        <p>Use the link above to get in touch and we'll get back to you ASAP.</p>
+    </div>
 <?php
 }
 
@@ -163,8 +153,8 @@ function cc_gutenberg_register_files()
     // script file
     wp_register_script(
         'cc-block-script',
-        get_stylesheet_directory_uri() .'/js/block-script.js', // adjust the path to the JS file
-        array( 'wp-blocks', 'wp-edit-post' )
+        get_stylesheet_directory_uri() . '/js/block-script.js', // adjust the path to the JS file
+        array('wp-blocks', 'wp-edit-post')
     );
     // register block editor script
     register_block_type('cc/ma-block-files', array(
@@ -216,23 +206,26 @@ add_filter('gform_submit_button', 'wd_gf_update_submit_button', 10, 2);
 function cb_theme_enqueue()
 {
     $the_theme = wp_get_theme();
-    
+
     // wp_enqueue_style('lightbox-stylesheet', get_stylesheet_directory_uri() . '/css/lightbox.min.css', array(), $the_theme->get('Version'));
-    wp_enqueue_style('slick-stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css', array(), $the_theme->get('Version'));
-    wp_enqueue_style('slick-stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css', array(), $the_theme->get('Version'));
+    // wp_enqueue_style('slick-stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css', array(), $the_theme->get('Version'));
+    // wp_enqueue_style('slick-stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css', array(), $the_theme->get('Version'));
     // wp_enqueue_script('lightbox-scripts', get_stylesheet_directory_uri() . '/js/lightbox-plus-jquery.min.js', array(), $the_theme->get('Version'), true);
     // wp_enqueue_script('lightbox-scripts', get_stylesheet_directory_uri() . '/js/lightbox.min.js', array(), $the_theme->get('Version'), true);
     // wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js', array(), null, true);
-    wp_enqueue_script('slick-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.8.1', true);
+    // wp_enqueue_script('slick-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.8.1', true);
     // wp_enqueue_style('aos-style', "https://unpkg.com/aos@2.3.1/dist/aos.css", array());
     // wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
-    
+
     // wp_enqueue_script('gsap-scripts', get_stylesheet_directory_uri() . '/js/gsap/gsap.min.js', array('jquery'), '1.8.1', true);
     // wp_enqueue_script('scrolltrigger-scripts', get_stylesheet_directory_uri() . '/js/gsap/ScrollTrigger.min.js', array('gsap-scripts'), null, true);
     // wp_enqueue_script('splittext-scripts', get_stylesheet_directory_uri() . '/js/gsap/SplitText.min.js', array('gsap-scripts'), null, true);
-        
 
     // wp_enqueue_script('parallax', get_stylesheet_directory_uri() . '/js/parallax.min.js', array('jquery'), null, true);
+
+
+    wp_enqueue_style('swiper-style', "https://unpkg.com/swiper/swiper-bundle.min.css", array());
+    wp_enqueue_script('swiper', "https://unpkg.com/swiper/swiper-bundle.min.js", array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
 
@@ -332,4 +325,5 @@ add_action('login_enqueue_scripts', 'custom_login_logo');
 //     array_unshift($editors, ExtendedWpImageEditorImagick::class);
 
 //     return $editors;
-// });?>
+// });
+?>

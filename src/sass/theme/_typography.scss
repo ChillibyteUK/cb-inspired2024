@@ -14,14 +14,6 @@
     font-weight: 600;
     src: url('../fonts/figtree-v5-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* playfair-display-regular - latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Playfair Display';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/playfair-display-v36-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
 
 :root {
     font-variant-ligatures: none;
@@ -48,7 +40,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, .h99 {
     font-style: normal;
     margin-bottom: 0.5rem;
     font-weight: var(--fw-600);
-    color: var(--col-primary-400);
+    color: black;
     text-wrap: balance;
 }
 
@@ -56,7 +48,7 @@ h1, .h1 {
     font-size: var(--fs-900);
 }
 h2, .h2 {
-    font-size: var(--fs-800);
+    font-size: var(--fs-900);
 }
 h3, .h3 {
     font-size: var(--fs-700);

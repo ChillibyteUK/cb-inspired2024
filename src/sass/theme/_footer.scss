@@ -2,7 +2,7 @@
     position: relative;
     background-color: var(--col-primary-400);
     font-weight: var(--fw-300);
-    font-size: var(--fs-200);
+    font-size: var(--fs-300);
     color: #fff !important;
     isolation: isolate;
     a {
@@ -13,17 +13,6 @@
         }
     }
 
-    &__overlay {
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        opacity: 0.1;
-        background-image: url(../img/flower-bg.svg);
-        background-repeat: repeat;
-        background-size: 25%;
-        background-position: center;
-    }
-    
     .logo {
         display: block;
         width: min(50vw,80px);
@@ -41,10 +30,9 @@
     }
 
     &__title {
-        font-family: var(--ff-title);
         font-size: var(--fs-400);
-        margin-bottom: 0.5rem;
-        color: var(--col-accent-400);
+        margin-bottom: 1rem;
+        text-transform: uppercase;
     }
 
     ul {
@@ -53,11 +41,7 @@
     }
 
     ul li {
-        margin-bottom: 0.5rem;
-    }
-
-    ul.menu {
-        columns: 2;
+        margin-bottom: 0.25rem;
     }
 
     &__socials {

@@ -1,10 +1,10 @@
 {
-    "key": "group_663b4369efb30",
-    "title": "CB Portfolio Archive",
+    "key": "group_673344a1208c1",
+    "title": "CB Portfolio",
     "fields": [
         {
-            "key": "field_663b436aa3ce8",
-            "label": "CB Portfolio Archive",
+            "key": "field_673344a1ec814",
+            "label": "CB Portfolio",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -26,7 +26,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-portfolio-archive"
+                "value": "acf\/cb-portfolio"
             }
         ]
     ],
@@ -39,5 +39,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715159934
+    "modified": 1731413165
 }

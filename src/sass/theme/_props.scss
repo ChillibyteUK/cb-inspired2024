@@ -3,19 +3,22 @@ $col-secondary: #e9988e;
 
 :root {
 
-    // --col-primary-400: #005D53;
-    --hsl-primary-400: 174 100% 18%;
+    // --col-primary-400: #5F8575;
+    --hsl-primary-400: 155 17% 45%;
     --col-primary-400: hsl(var(--hsl-primary-400));
     
-    // --col-secondary-400: #009888;
-    --hsl-secondary-400: 174 100% 30%;
+    // --col-secondary-400: #f3cfc6;
+    --hsl-secondary-400: 12 65% 86%;
     --col-secondary-400: hsl(var(--hsl-secondary-400));
 
+    // green 400 #5f8575
+    --hsl-green-400: 155 17% 45%;
+    --col-green-400: hsl(var(--hsl-green-400));
 
     --col-grey-900: #444;
     --col-grey-600: #aaaaaa42;
-    --col-grey-400: #f1f1ef;
-    --col-grey: #f5f5f5;
+    
+    --col-grey-200: #fcf3f1;
     --hsl-grey: 0 0% 96%;
     
     
@@ -48,5 +51,5 @@ $col-secondary: #e9988e;
     --border-xs: 0.25rem;
 
     --ff-body: 'figtree', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    --ff-title: 'playfair display', Georgia, 'Times New Roman', Times, serif;
+    --ff-title: 'figtree', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

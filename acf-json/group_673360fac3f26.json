@@ -1,10 +1,10 @@
 {
-    "key": "group_65cca8f781bc7",
-    "title": "CB Video",
+    "key": "group_673360fac3f26",
+    "title": "CB Instagram Panel",
     "fields": [
         {
-            "key": "field_65cca8f87a711",
-            "label": "CB Video",
+            "key": "field_673360fb09fbf",
+            "label": "CB Instagram Panel",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,9 +21,9 @@
             "esc_html": 0
         },
         {
-            "key": "field_65cca9047a712",
-            "label": "Video ID",
-            "name": "video_id",
+            "key": "field_6733610c09fc0",
+            "label": "Intro",
+            "name": "intro",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -36,9 +36,38 @@
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 0,
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_6733619609fc1",
+            "label": "Images",
+            "name": "images",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": 6,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -46,7 +75,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-video"
+                "value": "acf\/cb-insta-panel"
             }
         ]
     ],
@@ -59,5 +88,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707911469
+    "modified": 1731420583
 }
