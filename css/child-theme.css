@@ -20936,7 +20936,6 @@ header .current-menu-item {
   color: var(--col-accent-400) !important;
 }
 .footer .logo {
-  display: block;
   width: min(50vw, 80px);
   margin-inline: auto;
 }
