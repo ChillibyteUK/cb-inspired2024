@@ -21017,6 +21017,7 @@ header .current-menu-item {
   font-weight: var(--fw-900) !important;
   min-width: 240px !important;
   text-align: center !important;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 .btn-secondary {
@@ -21024,13 +21025,19 @@ header .current-menu-item {
   color: black;
 }
 .btn-secondary:hover {
-  color: black;
+  color: white;
+  background-color: var(--col-primary-400);
 }
 
 .btn-primary, body .gform_wrapper .gform_footer button[type=submit],
 .gfield_choice_all_toggle {
-  background-color: var(--col-primary-400) !important;
-  color: white !important;
+  background-color: var(--col-primary-400);
+  color: white;
+}
+.btn-primary:hover, body .gform_wrapper .gform_footer button[type=submit]:hover,
+.gfield_choice_all_toggle:hover {
+  background-color: var(--col-secondary-400);
+  color: black;
 }
 
 .blog__image {

@@ -8,17 +8,23 @@
     font-weight: var(--fw-900) !important;
     min-width: 240px !important;
     text-align: center !important;
-
+    transition: background-color var(--transition), color var(--transition);
 }
 .btn-secondary {
     background-color: var(--col-secondary-400);
     color: black;
     &:hover {
-        color: black;
+        color: white;
+        background-color: var(--col-primary-400);
     }
 }
 .btn-primary {
-    background-color: var(--col-primary-400) !important;
-    color: white !important;
+    background-color: var(--col-primary-400);
+    color: white;
+    &:hover {
+        background-color: var(--col-secondary-400);
+        color: black;
+    }
+
 }
 
