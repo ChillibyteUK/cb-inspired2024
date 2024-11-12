@@ -20916,6 +20916,9 @@ header {
 header.hidden {
   transform: translateY(-100px);
 }
+header .current-menu-item {
+  font-weight: var(--fw-900);
+}
 
 .footer {
   position: relative;
