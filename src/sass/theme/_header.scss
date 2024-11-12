@@ -12,4 +12,9 @@ header {
     .current-menu-item {
         font-weight: var(--fw-900);
     }
+
+    #menu-primary-nav {
+        column-gap: 3rem;
+        row-gap: 0.5rem;
+    }
 }

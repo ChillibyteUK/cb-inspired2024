@@ -147,7 +147,7 @@ session_start();
                         array(
                             'theme_location'  => 'primary_nav',
                             'container_class' => 'container-xl w-100',
-                            'menu_class'      => 'navbar-nav justify-content-end gap-5',
+                            'menu_class'      => 'navbar-nav justify-content-end',
                             'fallback_cb'     => '',
                             'depth'           => 3,
                             'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
