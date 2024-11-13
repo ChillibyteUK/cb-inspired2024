@@ -21350,6 +21350,10 @@ header #menu-primary-nav {
   object-fit: cover;
 }
 
+.fancybox__caption {
+  font-size: var(--fs-200);
+}
+
 .insta_panel__image {
   aspect-ratio: 1;
   -o-object-fit: cover;
