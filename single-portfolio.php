@@ -26,7 +26,7 @@ $after;
                     ?>
             <a href="<?=wp_get_attachment_image_url($g, 'full')?>"
                 data-fancybox="gallery" data-caption="<?=esc_html($caption)?>" aria-label="View image" class="col-sm-6 col-lg-4">
-                <?=wp_get_attachment_image($g, 'full',false,array('class' => 'gallery__image'))?></a>
+                <?=wp_get_attachment_image($g, 'large',false,array('class' => 'gallery__image'))?></a>
                     <?php
                 }
             }
