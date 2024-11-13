@@ -1,6 +1,6 @@
 <section class="portfolio">
     <div class="container-xl my-auto py-5">
-        <h2 class="mb-5">Portfolio</h2>
+        <h2 class="mb-5" data-aos="fade">Portfolio</h2>
         <div class="portfolio__swiper swiper-container mb-4">
             <div class="swiper-wrapper">
                 <?php
