@@ -25,13 +25,31 @@ $after;
                     $caption = wp_get_attachment_caption($g) ?? null;
                     ?>
             <a href="<?=wp_get_attachment_image_url($g, 'full')?>"
-                data-fancybox="gallery" data-caption="<?=$caption?>" aria-label="View image" class="col-sm-6 col-lg-4">
+                data-fancybox="gallery" data-caption="<?=esc_html($caption)?>" aria-label="View image" class="col-sm-6 col-lg-4">
                 <?=wp_get_attachment_image($g, 'full',false,array('class' => 'gallery__image'))?></a>
                     <?php
                 }
             }
             ?>
         </div>
+        <div class="pf_nav">
+            <?php
+            $prev_post = get_previous_post_link('%link', '%title');
+            if ($prev_post) {
+                echo '<div class="previous-link">' . $prev_post . '</div>';
+            } else {
+                echo '<div class="previous-link"></div>';
+            }
+
+            $next_post = get_next_post_link('%link', '%title');
+            if ($next_post) {
+                echo '<div class="next-link">' . $next_post . '</div>';
+            } else {
+                echo '<div class="next-link"></div>';
+            }
+            ?>
+        </div>
+
     </div>
 </main>
 <?php
