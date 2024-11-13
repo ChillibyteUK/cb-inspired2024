@@ -1,7 +1,7 @@
 <?php
 $class = $block['className'] ?? null;
 ?>
-<section class="hero">
+<section class="hero hero--short">
     <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php
@@ -42,12 +42,9 @@ $class = $block['className'] ?? null;
     <div class="hero__inner">
         <div class="container-xl my-auto">
             <div class="row">
-                <div class="col-md-6 offset-md-6">
-                    <div class="h1">
+                <div class="col-md-6">
+                    <h1>
                         <?= get_field('title') ?>
-                    </div>
-                    <h1 class="hero__content">
-                        <?= get_field('content') ?>
                     </h1>
                 </div>
             </div>

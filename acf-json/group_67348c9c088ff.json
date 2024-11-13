@@ -1,10 +1,10 @@
 {
-    "key": "group_64d7cd18ba3f8",
-    "title": "CB Full Hero",
+    "key": "group_67348c9c088ff",
+    "title": "CB Short Hero",
     "fields": [
         {
-            "key": "field_64d7cd195a046",
-            "label": "CB Full Hero",
+            "key": "field_67348c9c23865",
+            "label": "CB Short Hero",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,8 +21,8 @@
             "esc_html": 0
         },
         {
-            "key": "field_64d7cd245a047",
-            "label": "Title",
+            "key": "field_67348c9c272dc",
+            "label": "Title (H1)",
             "name": "title",
             "aria-label": "",
             "type": "text",
@@ -36,32 +36,12 @@
             },
             "default_value": "",
             "maxlength": "",
-            "placeholder": "",
+            "placeholder": "H1",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_655b85dae8e61",
-            "label": "Content (H1)",
-            "name": "content",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_655b862ae8e66",
+            "key": "field_67348c9c2ea1e",
             "label": "Slides",
             "name": "slides",
             "aria-label": "",
@@ -94,7 +74,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-hero"
+                "value": "acf\/cb-short-hero"
             }
         ]
     ],
@@ -107,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731498094
+    "modified": 1731503515
 }

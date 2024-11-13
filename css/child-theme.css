@@ -21148,6 +21148,9 @@ header #menu-primary-nav {
   position: relative;
   isolation: isolate;
 }
+.hero--short {
+  height: max(400px, 50vh);
+}
 .hero__inner {
   position: absolute;
   inset: 0;
