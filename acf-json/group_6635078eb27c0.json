@@ -87,7 +87,8 @@
             "default_value": "",
             "allowed_colors": [
                 "grey-200",
-                "white"
+                "white",
+                "secondary-400"
             ],
             "exclude_colors": "",
             "return_format": "slug",
@@ -193,5 +194,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731506787
+    "modified": 1731508332
 }

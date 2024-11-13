@@ -74,12 +74,12 @@ function widgets_init()
             array(
                 'name'  => 'Primary',
                 'slug'  => 'primary-400',
-                'color' => '#005d53',
+                'color' => '#5F8575',
             ),
             array(
                 'name'  => 'Secondary',
                 'slug'  => 'secondary-400',
-                'color' => '#009888',
+                'color' => '#f3cfc6',
             ),
             array(
                 'name'  => 'Grey',

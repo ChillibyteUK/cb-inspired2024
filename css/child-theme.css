@@ -20870,6 +20870,7 @@ strong, b {
   background-color: var(--col-primary-400);
 }
 
+.bg-secondary-400,
 .has-secondary-400-background-color {
   background-color: var(--col-secondary-400);
 }
@@ -21348,7 +21349,6 @@ header #menu-primary-nav {
 }
 
 .quote {
-  background-color: var(--col-secondary-400);
   text-align: center;
 }
 .quote__quote {
