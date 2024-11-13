@@ -9297,7 +9297,11 @@
 	})();
 
 	// Add your custom JS here.
-	AOS.init();
+	AOS.init({
+	  duration: 600,
+	  easing: "ease-in-out",
+	  once: true
+	});
 	document.addEventListener('DOMContentLoaded', function () {
 	  const topNav = document.querySelector('header'); // Top Navigation Scroll Behaviour
 

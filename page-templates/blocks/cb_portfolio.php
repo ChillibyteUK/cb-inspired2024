@@ -8,16 +8,18 @@
                     'post_type' => 'portfolio',
                     'posts_per_page' => 9
                 ));
+                $d = 0;
                 while ($q->have_posts()) {
                     $q->the_post();
                 ?>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" data-aos="fade-in" data-aos-delay="<?=$d?>">
                         <a class="portfolio__card" href="<?= get_the_permalink() ?>">
                             <?= get_the_post_thumbnail(get_the_ID(), 'full', array('class' => 'portfolio__image')) ?>
                             <h3 class="h4 mt-2"><?= get_the_title() ?></h3>
                         </a>
                     </div>
                 <?php
+                    $d += 200;
                 }
                 wp_reset_postdata();
                 ?>

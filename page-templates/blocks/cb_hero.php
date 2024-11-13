@@ -39,7 +39,7 @@ $class = $block['className'] ?? null;
             }
             ?>
     </div>
-    <div class="hero__inner">
+    <div class="hero__inner" data-aos="fade">
         <div class="container-xl my-auto">
             <div class="row">
                 <div class="col-md-6 offset-md-6">
