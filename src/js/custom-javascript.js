@@ -1,5 +1,8 @@
 // Add your custom JS here.
 
+AOS.init();
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
     const topNav = document.querySelector('header');

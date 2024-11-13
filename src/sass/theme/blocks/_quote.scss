@@ -1,0 +1,15 @@
+.quote {
+    background-color: var(--col-secondary-400);
+    text-align: center;
+    &__quote {
+        font-size: var(--fs-600);
+        max-width: 60ch;
+        margin-inline: auto;
+        margin-block-end: 1rem;
+        position: relative;
+    }
+    &__attr {
+        font-size: var(--fs-300);
+        font-style: italic;
+    }
+}

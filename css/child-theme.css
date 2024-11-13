@@ -21347,6 +21347,23 @@ header #menu-primary-nav {
   color: white;
 }
 
+.quote {
+  background-color: var(--col-secondary-400);
+  text-align: center;
+}
+.quote__quote {
+  font-size: var(--fs-600);
+  max-width: 60ch;
+  margin-inline: auto;
+  -webkit-margin-after: 1rem;
+  margin-block-end: 1rem;
+  position: relative;
+}
+.quote__attr {
+  font-size: var(--fs-300);
+  font-style: italic;
+}
+
 .wp-block-quote {
   position: relative;
   padding: 2rem;
