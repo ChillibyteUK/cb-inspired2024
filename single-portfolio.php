@@ -38,14 +38,14 @@ $after;
             if ($prev_post) {
                 echo '<div class="previous-link">' . $prev_post . '</div>';
             } else {
-                echo '<div class="previous-link"></div>';
+                echo '<div></div>';
             }
 
             $next_post = get_next_post_link('%link', '%title');
             if ($next_post) {
                 echo '<div class="next-link">' . $next_post . '</div>';
             } else {
-                echo '<div class="next-link"></div>';
+                echo '<div></div>';
             }
             ?>
         </div>
