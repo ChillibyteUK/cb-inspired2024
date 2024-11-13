@@ -85,7 +85,6 @@
         overflow: hidden;
         color: var(--body-color) !important;
         &:hover {
-
             img {
                 transform: scale(1.1);
             }
@@ -105,4 +104,10 @@
     &__title {
         text-transform: uppercase;
     }
+}
+
+.gallery__image {
+    aspect-ratio: 1;
+    width: 100%;
+    object-fit: cover;
 }

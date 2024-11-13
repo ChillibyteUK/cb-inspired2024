@@ -20908,7 +20908,7 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
 
 header {
   position: fixed;
-  z-index: 9999;
+  z-index: 999;
   top: 0;
   right: 0;
   left: 0;
@@ -21341,6 +21341,13 @@ header #menu-primary-nav {
 }
 .portfolio_grid__title {
   text-transform: uppercase;
+}
+
+.gallery__image {
+  aspect-ratio: 1;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .insta_panel__image {
