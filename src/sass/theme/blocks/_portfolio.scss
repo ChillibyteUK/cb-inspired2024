@@ -78,3 +78,31 @@
     }
 
 }
+
+
+.portfolio_grid {
+    &__card {
+        overflow: hidden;
+        color: var(--body-color) !important;
+        &:hover {
+
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+    &__image {
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        margin-block-end: 0.75rem;
+        img {
+            object-fit: cover;
+            display: block;
+            transition: transform var(--transition);
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+    }
+}

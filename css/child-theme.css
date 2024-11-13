@@ -21319,6 +21319,30 @@ header #menu-primary-nav {
   object-position: center;
 }
 
+.portfolio_grid__card {
+  overflow: hidden;
+  color: var(--body-color) !important;
+}
+.portfolio_grid__card:hover img {
+  transform: scale(1.1);
+}
+.portfolio_grid__image {
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  width: 100%;
+  -webkit-margin-after: 0.75rem;
+  margin-block-end: 0.75rem;
+}
+.portfolio_grid__image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition);
+}
+.portfolio_grid__title {
+  text-transform: uppercase;
+}
+
 .insta_panel__image {
   aspect-ratio: 1;
   -o-object-fit: cover;
