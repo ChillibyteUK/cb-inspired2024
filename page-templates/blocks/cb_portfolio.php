@@ -25,9 +25,8 @@
                 ?>
             </div>
         </div>
-        <div class="swiper-controls">
+        <div class="swiper-controls gap-4">
             <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
             <div class="swiper-button-next"></div>
         </div>
     </div>
@@ -37,10 +36,13 @@ add_action('wp_footer', function () {
 ?>
     <script>
         const swiper = new Swiper('.portfolio__swiper', {
+            effect: 'slide',
+            speed: 500,
             slidesPerView: 2, // Shows 4 cards at a time
             spaceBetween: 16, // Space between cards (adjust as needed)
             slidesPerGroup: 1, // Moves one slide at a time
             loop: true, // Loop through slides
+            autoplay: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -67,9 +69,6 @@ add_action('wp_footer', function () {
                 } // 4 cards at a time on large screens
             }
         });
-        setTimeout(() => {
-    swiper.update();
-}, 100);
     </script>
 <?php
 }, 9999);
