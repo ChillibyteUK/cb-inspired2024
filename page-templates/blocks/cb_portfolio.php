@@ -67,6 +67,9 @@ add_action('wp_footer', function () {
                 } // 4 cards at a time on large screens
             }
         });
+        setTimeout(() => {
+    swiper.update();
+}, 100);
     </script>
 <?php
 }, 9999);
