@@ -129,7 +129,7 @@ session_start();
             <div class="container">
                 <!-- Logo -->
                 <a class="navbar-brand" href="#">
-                    <img src="<?= get_stylesheet_directory_uri() ?>/img/ie-logo.svg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    <img src="<?= get_stylesheet_directory_uri() ?>/img/ie-logo--dk.svg" alt="Inspired Earth Design" width="170" height="61" class="d-inline-block align-text-top">
                 </a>
 
                 <!-- Burger Menu for Mobile -->
