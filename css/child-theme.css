@@ -20939,7 +20939,7 @@ header #menu-primary-nav {
   color: #fff !important;
 }
 .footer a:hover {
-  color: var(--col-accent-400) !important;
+  color: var(--col-secondary-400) !important;
 }
 .footer .logo {
   width: min(80vw, 300px);
