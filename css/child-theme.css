@@ -21501,6 +21501,9 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
   font-style: italic;
 }
 
+.contact {
+  padding-top: 4rem;
+}
 .contact .fa-ul .fa-li {
   font-size: 1.6rem;
   line-height: 1.3;
