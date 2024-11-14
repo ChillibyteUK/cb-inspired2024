@@ -142,11 +142,15 @@ function gb_gutenberg_admin_styles()
             .wp-block[data-align="full"] {
                 max-width: none;
             }	
+
+            .block-editor-page #wpwrap {
+                overflow-y: auto !important;
+            }
+
         </style>
     ';
 }
 add_action('admin_head', 'gb_gutenberg_admin_styles');
-
 
 // disable full-screen editor view by default
 if (is_admin()) {
