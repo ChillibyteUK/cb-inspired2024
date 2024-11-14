@@ -117,6 +117,66 @@ session_start();
     <?php
     }
     ?>
+    <style>
+.navbar-toggler {
+    border: none;
+    background: transparent !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Style the hamburger bars */
+.navbar-toggler .icon-bar {
+    display: block;
+    width: 100%;        /* Full width of the toggler */
+    height: 3px;        /* Thicker height for bars */
+    background-color: rgba(0 0 0 /.7);  /* Adjust to your desired color */
+    border-radius: 2px; /* Add slight rounding for a softer look */
+    transition: all 0.3s ease; /* Smooth transition for the animation */
+    position: absolute; /* Positioning to align properly during transformation */
+}
+
+/* Positioning each bar correctly when the hamburger is closed */
+.icon-bar:nth-of-type(1) {
+    top: 0; /* Top bar */
+}
+
+.icon-bar:nth-of-type(2) {
+    top: 50%; /* Middle bar centered */
+    transform: translateY(-50%); /* Adjust to perfectly center */
+}
+
+.icon-bar:nth-of-type(3) {
+    bottom: 0; /* Bottom bar */
+}
+
+/* Animation to form the X when expanded */
+.navbar-toggler[aria-expanded="true"] .icon-bar:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .icon-bar:nth-of-type(2) {
+    opacity: 0; /* Hide the middle bar */
+}
+
+.navbar-toggler[aria-expanded="true"] .icon-bar:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+    </style>
 </head>
 
 <body <?php body_class(); ?>
@@ -133,9 +193,11 @@ session_start();
                 </a>
 
                 <!-- Burger Menu for Mobile -->
-                <div class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </div>
+                <button class="navbar-toggler x collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
                 <!-- Navbar Links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
