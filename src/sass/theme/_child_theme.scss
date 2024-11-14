@@ -4,7 +4,7 @@
 @import "header";
 @import "footer";
 @import "buttons";
-@import "blog";
+// @import "blog";
 @import "forms";
 @import "blocks/blocks";
 
@@ -12,6 +12,10 @@ body {
     // color: var(--col-primary-400);
     // color: #111;
     color: var(--body-color);
+}
+
+.p-top {
+    padding-top: 6rem;
 }
 
 // a:not(.btn) {

@@ -21106,47 +21106,6 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
   color: black;
 }
 
-.blog__image {
-  aspect-ratio: 16/9;
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: center;
-  object-position: center;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.blog_card {
-  display: block;
-  background-color: var(--col-grey);
-  color: var(--body-color);
-  margin-bottom: 1rem;
-}
-.blog_card img {
-  aspect-ratio: 16/9;
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: center;
-  object-position: center;
-  width: 100%;
-}
-.blog_card__content {
-  padding: 0.5rem 1rem;
-}
-.blog_card__title {
-  font-size: var(--fs-400);
-}
-
-.p-top {
-  padding-top: 6rem;
-}
-
-.related {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 4rem;
-}
-
 @media (min-width: 992px) {
   fieldset.cols-md-3 .gfield_checkbox {
     -moz-columns: 3;
@@ -21479,6 +21438,10 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
 .awards__swiper {
   overflow: hidden;
 }
+.awards__swiper .swiper-slide {
+  display: grid;
+  place-content: center;
+}
 .awards__badge {
   aspect-ratio: 1;
   -o-object-fit: contain;
@@ -21554,6 +21517,10 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
 
 body {
   color: var(--body-color);
+}
+
+.p-top {
+  padding-top: 6rem;
 }
 
 a {

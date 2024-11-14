@@ -1,6 +1,11 @@
 .awards {
     &__swiper {
         overflow: hidden;
+
+        .swiper-slide {
+            display: grid;
+            place-content: center;
+        }
     }
     &__badge {
         aspect-ratio: 1;
