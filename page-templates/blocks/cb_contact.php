@@ -1,16 +1,6 @@
 <?php
 $bg = get_field('colour') ? 'bg-' . get_field('colour') : null;
 ?>
-<style>
-.contact .fa-ul .fa-li {
-    font-size: 1.6rem;
-    line-height: 1.3;
-    color: rgba(0 0 0 / .7);
-}
-.contact .fa-ul li {
-    margin-bottom: 0.5rem;
-}
-</style>
 <section
     class="split bg-grey-200 contact">
     <div class="container-fluid">

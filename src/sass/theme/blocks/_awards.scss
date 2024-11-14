@@ -7,16 +7,4 @@
         object-fit: contain;
     }
 
-    .swiper-button-prev,
-    .swiper-button-next {
-        width: 2rem;
-        height: 2rem;
-        background-color: var(--col-secondary-400);
-        border-radius: 100vw;
-        &::after {
-            font-size: 1.2rem;
-            color: white;
-        }
-    }
-
 }

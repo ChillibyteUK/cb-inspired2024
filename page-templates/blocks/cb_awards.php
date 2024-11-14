@@ -5,7 +5,7 @@
                 <h2>Awards &amp; affiliations</h2>
             </div>
             <div class="col-md-9 position-relative">
-                <div class="awards__swiper swiper-container">
+                <div class="awards__swiper swiper-container mb-3">
                     <div class="swiper-wrapper">
                         <?php
                         $d = 0;
@@ -19,10 +19,10 @@
                         }
                         ?>
                     </div>
-                    <div class="swiper-controls">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
+                </div>
+                <div class="swiper-controls">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </div>
         </div>
@@ -37,6 +37,7 @@ add_action('wp_footer', function () {
             spaceBetween: 16, // Space between cards (adjust as needed)
             slidesPerGroup: 1, // Moves one slide at a time
             loop: true, // Loop through slides
+            autoplay: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
