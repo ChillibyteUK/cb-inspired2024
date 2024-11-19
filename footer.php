@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
                 <?php wp_nav_menu(array('theme_location' => 'footer_menu2')); ?>
             </div>
             <div class="col-sm-6 col-lg-3 mb-2">
-                <div class="footer__title">Projects</div>
+                <div class="footer__title">Portfolio</div>
                 <ul class="menu">
                     <?php
                     $q = new WP_Query(array(
