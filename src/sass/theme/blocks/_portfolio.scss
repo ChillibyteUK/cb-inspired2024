@@ -121,14 +121,18 @@
     grid-template-columns: 1fr 1fr;
     margin-block: 2rem;
     .previous-link {
+        display: flex;
         justify-content: flex-start;
         position: relative;
     }
     .next-link {
+        display: flex;
         justify-content: flex-end;
+        position: relative;
     }
     .previous-link a,
     .next-link a {
+        position: relative;
         color: var(--col-primary-400);
         display: flex;
         align-items: center;

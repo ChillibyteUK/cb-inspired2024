@@ -21392,14 +21392,18 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
   margin-block: 2rem;
 }
 .pf_nav .previous-link {
+  display: flex;
   justify-content: flex-start;
   position: relative;
 }
 .pf_nav .next-link {
+  display: flex;
   justify-content: flex-end;
+  position: relative;
 }
 .pf_nav .previous-link a,
 .pf_nav .next-link a {
+  position: relative;
   color: var(--col-primary-400);
   display: flex;
   align-items: center;
