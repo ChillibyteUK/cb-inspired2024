@@ -21612,6 +21612,9 @@ a.anchor {
   backdrop-filter: blur(2px);
 }
 
+.zoom {
+  position: relative;
+}
 .zoom::after {
   transition: opacity var(--transition);
   position: absolute;
