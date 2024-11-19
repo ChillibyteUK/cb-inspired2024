@@ -43,9 +43,15 @@ $class = $block['className'] ?? null;
         <div class="container-xl my-auto">
             <div class="row">
                 <div class="col-md-6 offset-md-6">
+                    <?php
+                    if (get_field('title') ?? null) {
+                        ?>
                     <div class="h1">
                         <?= get_field('title') ?>
                     </div>
+                        <?php
+                    }
+                    ?>
                     <h1 class="hero__content">
                         <?= get_field('content') ?>
                     </h1>
