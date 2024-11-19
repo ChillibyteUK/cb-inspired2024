@@ -21630,6 +21630,9 @@ a.anchor {
   background-repeat: no-repeat;
   opacity: 0;
 }
+.zoom:hover::after {
+  opacity: 1;
+}
 
 /*
 var all = document.getElementsByTagName("*"), i = 0, rect, docWidth = document.documentElement.offsetWidth;

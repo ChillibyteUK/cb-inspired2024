@@ -200,6 +200,9 @@ a.anchor {
         background-repeat: no-repeat;
         opacity: 0;
     }
+    &:hover::after {
+        opacity: 1;
+    }
 }
 
 // show stuff that overflows horizontally
