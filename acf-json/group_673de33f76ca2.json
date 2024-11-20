@@ -12,13 +12,35 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_673de49f6ce86",
+            "label": "Background",
+            "name": "background",
+            "aria-label": "",
+            "type": "editor_palette",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "white",
+            "allowed_colors": "",
+            "exclude_colors": [
+                "primary-400"
+            ],
+            "return_format": "slug",
+            "allow_in_bindings": 0
         },
         {
             "key": "field_673de3467336d",
