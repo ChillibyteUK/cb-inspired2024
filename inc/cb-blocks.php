@@ -30,6 +30,15 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
+            'name'                => 'cb_full_width',
+            'title'                => __('CB Full Width'),
+            'category'            => 'layout',
+            'icon'                => 'cover-image',
+            'render_template'    => 'page-templates/blocks/cb_full_width.php',
+            'mode'    => 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
             'name'                => 'cb_split',
             'title'                => __('CB Split'),
             'category'            => 'layout',
