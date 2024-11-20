@@ -18,26 +18,26 @@ $class = $block['className'] ?? null;
             ?>
         </div>
         <?php
-            $l = count(get_field('slides'));
-            if ($l > 1) { 
-            ?>
-        <div class="carousel-indicators">
+        $l = count(get_field('slides'));
+        if ($l > 1) {
+        ?>
+            <div class="carousel-indicators">
                 <?php
                 $active = 'active';
                 for ($i = 0; $i < $l; $i++) {
-                    ?>
-                <button type="button" data-bs-target="#carousel"
-                    data-bs-slide-to="<?= $i ?>"
-                    class="<?= $active ?>" aria-current="true"
-                    aria-label="Slide <?= $i ?>"></button>
-                    <?php
+                ?>
+                    <button type="button" data-bs-target="#carousel"
+                        data-bs-slide-to="<?= $i ?>"
+                        class="<?= $active ?>" aria-current="true"
+                        aria-label="Slide <?= $i ?>"></button>
+                <?php
                     $active = '';
                 }
                 ?>
-        </div>
-                <?php
-            }
-            ?>
+            </div>
+        <?php
+        }
+        ?>
     </div>
     <div class="hero__inner" data-aos="fade">
         <div class="container-xl my-auto">
@@ -45,16 +45,20 @@ $class = $block['className'] ?? null;
                 <div class="col-md-6 offset-md-6">
                     <?php
                     if (get_field('title') ?? null) {
-                        ?>
-                    <div class="h1">
-                        <?= get_field('title') ?>
-                    </div>
-                        <?php
+                    ?>
+                        <div class="h1">
+                            <?= get_field('title') ?>
+                        </div>
+                    <?php
+                    }
+                    if (get_field('content') ?? null) {
+                    ?>
+                        <h1 class="hero__content">
+                            <?= get_field('content') ?>
+                        </h1>
+                    <?php
                     }
                     ?>
-                    <h1 class="hero__content">
-                        <?= get_field('content') ?>
-                    </h1>
                 </div>
             </div>
         </div>
