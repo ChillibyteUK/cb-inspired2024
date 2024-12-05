@@ -72,14 +72,19 @@ function widgets_init()
         'editor-color-palette',
         array(
             array(
-                'name'  => 'Primary',
+                'name'  => 'Primary Green',
                 'slug'  => 'primary-400',
                 'color' => '#5F8575',
             ),
             array(
-                'name'  => 'Secondary',
+                'name'  => 'Secondary Beige',
                 'slug'  => 'secondary-400',
                 'color' => '#f3cfc6',
+            ),
+            array(
+                'name'  => 'Secondary Blue',
+                'slug'  => 'blue-400',
+                'color' => '#5784a1',
             ),
             array(
                 'name'  => 'Grey',

@@ -2,14 +2,15 @@
 :root {
   --hsl-primary-400: 155 17% 45%;
   --col-primary-400: hsl(var(--hsl-primary-400));
+  --col-green-400: hsl(var(--hsl-primary-400));
   --hsl-secondary-400: 12 65% 86%;
   --col-secondary-400: hsl(var(--hsl-secondary-400));
-  --hsl-green-400: 155 17% 45%;
-  --col-green-400: hsl(var(--hsl-green-400));
   --col-grey-900: #444;
-  --col-grey-600: #aaaaaa42;
+  --col-grey-600: #e9e9e9;
   --col-grey-200: #fcf3f1;
   --hsl-grey: 0 0% 96%;
+  --hsl-blue-400: 204 30% 49%;
+  --col-blue-400: hsl(var(--col-blue-400));
   --body-color: #111;
   --h-top: 0;
   --fw-400: 300;
@@ -20878,6 +20879,11 @@ strong, b {
 .bg-secondary-400,
 .has-secondary-400-background-color {
   background-color: var(--col-secondary-400);
+}
+
+.bg-blue-400,
+.has-blue-400-background-color {
+  background-color: var(--col-blue-400);
 }
 
 .bg-light,
