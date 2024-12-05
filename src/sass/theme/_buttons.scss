@@ -28,3 +28,11 @@
 
 }
 
+
+.bg-blue-400 .btn-primary {
+    background-color: color-mix(in srgb, var(--col-blue-400), white 20%);
+    &:hover {
+        background-color: var(--col-secondary-400);
+        color: black;
+    }
+}
