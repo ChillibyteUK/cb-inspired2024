@@ -65,7 +65,7 @@ add_action('wp_footer', function () {
                     slidesPerView: 2
                 }, // 4 cards at a time on large screens
                 1200: {
-                    slidesPerView: 3
+                    slidesPerView: 2
                 } // 4 cards at a time on large screens
             }
         });
