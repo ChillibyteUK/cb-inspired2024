@@ -77,7 +77,7 @@ function widgets_init()
                 'color' => '#5F8575',
             ),
             array(
-                'name'  => 'Secondary Beige',
+                'name'  => 'Secondary Peach ',
                 'slug'  => 'secondary-400',
                 'color' => '#f3cfc6',
             ),
