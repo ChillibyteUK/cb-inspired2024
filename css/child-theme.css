@@ -21108,7 +21108,7 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
 
 .btn-primary, body .gform_wrapper .gform_footer button[type=submit],
 .gfield_choice_all_toggle {
-  background-color: var(--col-primary-400);
+  background-color: var(--col-blue-400);
   color: white;
 }
 .btn-primary:hover, body .gform_wrapper .gform_footer button[type=submit]:hover,
