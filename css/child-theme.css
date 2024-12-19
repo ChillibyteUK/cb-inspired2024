@@ -21000,7 +21000,7 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
 
 .footer {
   position: relative;
-  background-color: var(--col-primary-400);
+  background-color: var(--col-blue-400);
   font-weight: var(--fw-300);
   font-size: var(--fs-300);
   color: #fff !important;
@@ -21059,7 +21059,7 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
   font-size: 1rem;
 }
 .footer .colophon {
-  background-color: var(--col-primary-900);
+  background-color: var(--col-blue-900);
 }
 .footer .colophon .container-xl {
   border-top: 1px solid white;
