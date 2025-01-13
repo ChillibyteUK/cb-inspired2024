@@ -21472,6 +21472,7 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
 .awards__swiper .swiper-slide {
   display: grid;
   place-content: center;
+  height: auto;
 }
 .awards__badge {
   aspect-ratio: 1;
