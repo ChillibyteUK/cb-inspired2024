@@ -75,4 +75,8 @@ header {
         top: 50%;
         transform: translateY(-50%) rotate(-45deg);
     }
+
+    .navbar-brand {
+        max-height: 62px;
+    }
 }

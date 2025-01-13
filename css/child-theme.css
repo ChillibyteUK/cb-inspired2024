@@ -20998,6 +20998,9 @@ header .navbar-toggler[aria-expanded=true] .icon-bar:nth-of-type(3) {
   top: 50%;
   transform: translateY(-50%) rotate(-45deg);
 }
+header .navbar-brand {
+  max-height: 62px;
+}
 
 .footer {
   position: relative;
