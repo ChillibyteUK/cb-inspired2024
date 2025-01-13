@@ -21020,6 +21020,7 @@ header .navbar-brand img {
 }
 .footer .logo {
   width: min(80vw, 300px);
+  height: 100%;
   margin-inline: auto;
 }
 @media (min-width: 576px) {
