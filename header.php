@@ -25,8 +25,6 @@ session_start();
     <link rel="preload"
         href="<?= get_stylesheet_directory_uri() ?>/fonts/figtree-v5-latin-600.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="icon" href="<?= get_stylesheet_directory_uri() ?>/img/favicon.png" type="image/png">
-
     <?php
     if (get_field('ga_property', 'options')) {
     ?>
