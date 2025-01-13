@@ -26,8 +26,9 @@ session_start();
         href="<?= get_stylesheet_directory_uri() ?>/fonts/figtree-v5-latin-600.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <?php
-    if (get_field('ga_property', 'options')) {
-    ?>
+    if (!is_user_logged_in()) {
+        if (get_field('ga_property', 'options')) {
+        ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async
             src="https://www.googletagmanager.com/gtag/js?id=<?= get_field('ga_property', 'options') ?>">
@@ -43,10 +44,10 @@ session_start();
                 '<?= get_field('ga_property', 'options') ?>'
             );
         </script>
-    <?php
-    }
-    if (get_field('gtm_property', 'options')) {
-    ?>
+        <?php
+        }
+        if (get_field('gtm_property', 'options')) {
+        ?>
         <!-- Google Tag Manager -->
         <script>
             (function(w, d, s, l, i) {
@@ -67,7 +68,8 @@ session_start();
             );
         </script>
         <!-- End Google Tag Manager -->
-    <?php
+        <?php
+        }
     }
     if (get_field('google_site_verification', 'options')) {
         echo '<meta name="google-site-verification" content="' . get_field('google_site_verification', 'options') . '" />';
@@ -120,6 +122,17 @@ session_start();
 <body <?php body_class(); ?>
     <?php understrap_body_attributes(); ?>>
     <?php
+    if(!is_user_logged_in()) {
+        if (get_field('gtm_property', 'options')) {
+        ?>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe
+                src="https://www.googletagmanager.com/ns.html?id=<?= get_field('gtm_property', 'options') ?>"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <?php
+        }
+    }
     do_action('wp_body_open');
     ?>
     <header>
