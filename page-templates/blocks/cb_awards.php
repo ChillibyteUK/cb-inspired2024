@@ -2,7 +2,7 @@
     <div class="container-xl py-5">
         <div class="row">
             <div class="col-md-3" data-aos="fade">
-                <h2>Awards &amp; affiliations</h2>
+                <h2>Awards &amp; Press</h2>
             </div>
             <div class="col-md-9 position-relative">
                 <div class="awards__swiper swiper-container mb-3">
