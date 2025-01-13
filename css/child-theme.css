@@ -20827,6 +20827,7 @@ h5, .h5 {
   border-bottom: 2px solid var(--col-accent-400);
 }
 
+.fw-900,
 strong, b {
   font-weight: var(--fw-900);
 }
@@ -21554,12 +21555,16 @@ body {
 }
 
 a {
-  color: var(--col-primary-400);
+  color: var(--body-color);
   text-decoration: none;
   transition: color var(--transition);
 }
 a:hover {
-  color: var(--col-secondary-400);
+  color: var(--col-primary-400);
+}
+
+a:not([class]) {
+  font-weight: var(--fw-900);
 }
 
 a.noline {
