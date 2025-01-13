@@ -8,7 +8,7 @@ defined('ABSPATH') || exit;
     <div class="container-xl pb-4">
         <div class="mb-4">
             <a href="<?= get_home_url() ?>">
-                <img src="<?= get_stylesheet_directory_uri() ?>/img/ie-logo--wo.svg" alt="Inspired Earth Design" width="170" height="61" class="logo mb-4">
+                <img src="<?= get_stylesheet_directory_uri() ?>/img/ied_logo_white.svg" alt="Inspired Earth Design" width="730" height="320" class="logo mb-4">
             </a>
         </div>
         <div class="row pb-4">
