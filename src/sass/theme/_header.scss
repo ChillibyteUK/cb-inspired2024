@@ -77,7 +77,9 @@ header {
     }
 
     .navbar-brand img {
-        max-height: 62px;
+        aspect-ratio: 141 / 62;
         width: 100%;
+        max-height: 62px;
+        max-width: 141px;
     }
 }
