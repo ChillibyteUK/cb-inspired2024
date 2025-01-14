@@ -37,7 +37,7 @@ add_action('wp_footer', function () {
             spaceBetween: 16, // Space between cards (adjust as needed)
             slidesPerGroup: 1, // Moves one slide at a time
             loop: true, // Loop through slides
-            autoplay: false,
+            autoplay: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
