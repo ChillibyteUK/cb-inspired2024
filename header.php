@@ -95,7 +95,7 @@ session_start();
 					"postalCode": "GU7 1YL",
 					"addressRegion": "Surrey",
 					"addressCountry": "UK"
-				}
+				},
                 "email": "hello@inspiredearthdesign.co.uk",
                 "contactPoint": [{
                         "@type": "ContactPoint",
