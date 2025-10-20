@@ -21135,6 +21135,47 @@ header .navbar-brand img {
   color: black;
 }
 
+.blog__image {
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.blog_card {
+  display: block;
+  background-color: var(--col-grey);
+  color: var(--body-color);
+  margin-bottom: 1rem;
+}
+.blog_card img {
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  width: 100%;
+}
+.blog_card__content {
+  padding: 0.5rem 1rem;
+}
+.blog_card__title {
+  font-size: var(--fs-400);
+}
+
+.p-top {
+  padding-top: 6rem;
+}
+
+.related {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+}
+
 @media (min-width: 992px) {
   fieldset.cols-md-3 .gfield_checkbox {
     -moz-columns: 3;
@@ -21513,6 +21554,88 @@ header .navbar-brand img {
 }
 .contact .fa-ul li {
   margin-bottom: 0.5rem;
+}
+
+.news .news__grid,
+.latest_news .news__grid,
+.jobs .news__grid {
+  display: grid;
+  gap: 1rem;
+}
+.news .jobs__grid,
+.latest_news .jobs__grid,
+.jobs .jobs__grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 992px) {
+  .news .news__grid,
+.latest_news .news__grid,
+.jobs .news__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .news .jobs__grid,
+.latest_news .jobs__grid,
+.jobs .jobs__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.news__card,
+.latest_news__card,
+.jobs__card {
+  background-color: var(--col-grey-600);
+  color: var(--body-color);
+  display: block;
+}
+.news__card img,
+.latest_news__card img,
+.jobs__card img {
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  width: 100%;
+}
+.news .jobs__card,
+.latest_news .jobs__card,
+.jobs .jobs__card {
+  background-color: white;
+}
+.news .news__card, .news .lates_news__card,
+.latest_news .news__card,
+.latest_news .lates_news__card,
+.jobs .news__card,
+.jobs .lates_news__card {
+  min-height: 455px;
+}
+.news__inner,
+.latest_news__inner,
+.jobs__inner {
+  padding: 1rem 2rem;
+}
+.news__inner h3, .news__inner .h3,
+.latest_news__inner h3,
+.latest_news__inner .h3,
+.jobs__inner h3,
+.jobs__inner .h3 {
+  font-size: var(--fs-500);
+  color: var(--body-color);
+}
+.news__date,
+.latest_news__date,
+.jobs__date {
+  font-size: var(--fs-200);
+  margin-bottom: 1rem;
+}
+.news__excerpt,
+.latest_news__excerpt,
+.jobs__excerpt {
+  font-size: var(--fs-300);
+}
+
+.jobs {
+  background-color: var(--col-grey);
 }
 
 .wp-block-quote {

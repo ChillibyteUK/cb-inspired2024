@@ -2,7 +2,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-require_once CB_THEME_DIR . '/inc/cb-noblog.php';
+// require_once CB_THEME_DIR . '/inc/cb-noblog.php';
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 
