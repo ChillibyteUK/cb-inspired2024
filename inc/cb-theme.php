@@ -380,10 +380,6 @@ function cb_render_areas_we_cover_from_taxonomy() {
             )
         );
 
-        if ( is_wp_error( $areas ) || empty( $areas ) ) {
-            continue;
-        }
-
         echo '<div class="areas__group">';
         // Try to find a page for the county (area title).
         $county_slug = $county->slug;
@@ -395,9 +391,12 @@ function cb_render_areas_we_cover_from_taxonomy() {
             echo esc_html( $county->name );
         }
         echo '</h3>';
-        echo '<ul class="areas__list">';
 
-        foreach ( $areas as $term ) {
+        // Show areas if they exist, otherwise just show the county.
+        if ( ! is_wp_error( $areas ) && ! empty( $areas ) ) {
+            echo '<ul class="areas__list">';
+
+            foreach ( $areas as $term ) {
             $slug = $term->slug; // e.g. "guildford".
             $page = cb_get_area_page_by_slug( $slug );
 
@@ -411,7 +410,9 @@ function cb_render_areas_we_cover_from_taxonomy() {
             echo '</li>';
         }
 
-        echo '</ul>';
+            echo '</ul>';
+        }
+
         echo '</div>';
     }
 }
