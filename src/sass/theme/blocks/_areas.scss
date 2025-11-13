@@ -1,0 +1,77 @@
+.areas {
+  /* Parent: 6 equal columns */
+  .areas__areas {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem 1rem; /* row-gap / column-gap between the two county blocks */
+  }
+
+  /* Each county group spans 3 of the 6 columns */
+  .areas__group {
+    grid-column: span 3;
+  }
+
+  /* County heading */
+  .areas__group > h3 {
+    margin: 0 0 0.5rem;
+    font-size: var(--fs-700);
+  }
+
+  /* The county list itself becomes 3 columns */
+  .areas__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    column-count: 3; /* 3 sub-columns per county */
+    column-gap: 1.25rem; /* gap between those sub-columns */
+  }
+
+  .areas__item {
+    break-inside: avoid;
+    margin: 0 0 0.15rem;
+  }
+
+  .areas__link,
+  .areas__link--h3,
+  .areas__text {
+    display: inline-block;
+    font-size: var(--fs-body);
+    // color: var(--col-neutral-900);
+  }
+
+  .areas__link--h3,
+.areas__link {
+    font-weight: var(--fw-900);
+    transition: color var(--transition);
+    text-decoration: none;
+  }
+  .areas__link--h3:hover,
+  .areas__link:hover {
+    color: var(--col-blue-400);
+  }
+
+  .areas__link--h3 {
+    font-size: var(--fs-700);
+  }
+
+  /* Responsive: stack counties, reduce sub-columns */
+  @media (max-width: 1024px) {
+    .areas__group {
+      grid-column: span 6;
+    } /* Surrey and West Sussex on separate rows */
+    .areas__list {
+      column-count: 3;
+    }
+  }
+  @media (max-width: 720px) {
+    .areas__list {
+      column-count: 2;
+    }
+  }
+  @media (max-width: 520px) {
+    .areas__list {
+      column-count: 2;
+    }
+  }
+}

@@ -21638,6 +21638,86 @@ header .navbar-brand img {
   background-color: var(--col-grey);
 }
 
+.areas {
+  /* Parent: 6 equal columns */
+  /* Each county group spans 3 of the 6 columns */
+  /* County heading */
+  /* The county list itself becomes 3 columns */
+  /* Responsive: stack counties, reduce sub-columns */
+}
+.areas .areas__areas {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem 1rem;
+  /* row-gap / column-gap between the two county blocks */
+}
+.areas .areas__group {
+  grid-column: span 3;
+}
+.areas .areas__group > h3, .areas .areas__group > .h3 {
+  margin: 0 0 0.5rem;
+  font-size: var(--fs-700);
+}
+.areas .areas__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -moz-column-count: 3;
+  column-count: 3;
+  /* 3 sub-columns per county */
+  -moz-column-gap: 1.25rem;
+  column-gap: 1.25rem;
+  /* gap between those sub-columns */
+}
+.areas .areas__item {
+  -moz-column-break-inside: avoid;
+  break-inside: avoid;
+  margin: 0 0 0.15rem;
+}
+.areas .areas__link,
+.areas .areas__link--h3,
+.areas .areas__text {
+  display: inline-block;
+  font-size: var(--fs-body);
+}
+.areas .areas__link--h3,
+.areas .areas__link {
+  font-weight: var(--fw-900);
+  transition: color var(--transition);
+  text-decoration: none;
+}
+.areas .areas__link--h3:hover,
+.areas .areas__link:hover {
+  color: var(--col-blue-400);
+}
+.areas .areas__link--h3 {
+  font-size: var(--fs-700);
+}
+@media (max-width: 1024px) {
+  .areas {
+    /* Surrey and West Sussex on separate rows */
+  }
+  .areas .areas__group {
+    grid-column: span 6;
+  }
+  .areas .areas__list {
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+@media (max-width: 720px) {
+  .areas .areas__list {
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (max-width: 520px) {
+  .areas .areas__list {
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
 .wp-block-quote {
   position: relative;
   padding: 2rem;
