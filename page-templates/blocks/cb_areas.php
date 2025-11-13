@@ -10,8 +10,18 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <section class="areas py-5">
 	<div class="areas__content container-xl">
+		<?php
+		if ( get_field( 'title' ) ) {
+			?>
 		<h2><?= esc_html( get_field( 'title' ) ); ?></h2>
+			<?php
+		}
+		if ( get_field( 'intro' ) ) {
+			?>
 		<div class="areas__intro w-md-75 mx-auto mb-4"><?= esc_html( get_field( 'intro' ) ); ?></div>
+			<?php
+		}
+		?>
 		<div class="areas__areas">
 			<?php
 			// Display areas from areas taxonomy.
