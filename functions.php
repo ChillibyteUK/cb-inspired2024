@@ -11,6 +11,7 @@ defined('ABSPATH') || exit;
 define('CB_THEME_DIR', WP_CONTENT_DIR . '/themes/cb-inspired2024');
 
 require_once CB_THEME_DIR . '/inc/cb-theme.php';
+require_once CB_THEME_DIR . '/inc/cb-taxonomies.php';
 
 
 /**

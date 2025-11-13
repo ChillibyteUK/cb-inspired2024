@@ -331,4 +331,88 @@ add_action('login_enqueue_scripts', 'custom_login_logo');
 
 //     return $editors;
 // });
+
+/**
+ * Retrieves a child area page by its slug under the 'areas' parent page.
+ *
+ * @param string $slug The slug of the area page.
+ * @return WP_Post|null The area page post object if found, or null if not found.
+ */
+function cb_get_area_page_by_slug( string $slug ) {
+    $parent = get_page_by_path( 'areas' );
+    if ( ! $parent ) {
+        return null;
+    }
+    // get_page_by_path with parent context (WordPress doesn't do nested path matching here),
+    // so we fetch by path "areas/{$slug}" in one go.
+    $page = get_page_by_path( 'areas/' . $slug );
+    return $page instanceof WP_Post ? $page : null;
+}
+
+/**
+ * Renders the list of areas covered, grouped by county, using the 'area' taxonomy.
+ *
+ * Outputs HTML for each county and its areas, linking to area pages if available.
+ */
+function cb_render_areas_we_cover_from_taxonomy() {
+    $counties = get_terms(
+        array(
+            'taxonomy'   => 'area',
+            'parent'     => 0,
+            'hide_empty' => false,
+            'orderby'    => 'name',
+            'order'      => 'ASC',
+        )
+    );
+
+    if ( is_wp_error( $counties ) || empty( $counties ) ) {
+        return;
+    }
+
+    foreach ( $counties as $county ) {
+        $areas = get_terms(
+            array(
+                'taxonomy'   => 'area',
+                'parent'     => (int) $county->term_id,
+                'hide_empty' => false,
+                'orderby'    => 'name',
+                'order'      => 'ASC',
+            )
+        );
+
+        if ( is_wp_error( $areas ) || empty( $areas ) ) {
+            continue;
+        }
+
+        echo '<div class="areas__group">';
+        // Try to find a page for the county (area title).
+        $county_slug = $county->slug;
+        $county_page = cb_get_area_page_by_slug( $county_slug );
+        echo '<h3 class="h3">';
+        if ( $county_page ) {
+            echo '<a class="areas__link--h3" href="' . esc_url( get_permalink( $county_page->ID ) ) . '">' . esc_html( $county->name ) . '</a>';
+        } else {
+            echo esc_html( $county->name );
+        }
+        echo '</h3>';
+        echo '<ul class="areas__list">';
+
+        foreach ( $areas as $term ) {
+            $slug = $term->slug; // e.g. "guildford".
+            $page = cb_get_area_page_by_slug( $slug );
+
+            echo '<li class="areas__item">';
+            if ( $page ) {
+                echo '<a class="areas__link" href="' . esc_url( get_permalink( $page->ID ) ) . '">'
+                    . esc_html( $term->name ) . '</a>';
+            } else {
+                echo '<span class="areas__text">' . esc_html( $term->name ) . '</span>';
+            }
+            echo '</li>';
+        }
+
+        echo '</ul>';
+        echo '</div>';
+    }
+}
 ?>
