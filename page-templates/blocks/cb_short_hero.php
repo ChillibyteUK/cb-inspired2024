@@ -1,4 +1,12 @@
 <?php
+/**
+ * Block template for CB Short Hero.
+ *
+ * @package cb-inspired2024
+ */
+
+defined( 'ABSPATH' ) || exit;
+
 $class = $block['className'] ?? null;
 ?>
 <section class="hero hero--short">
@@ -6,45 +14,45 @@ $class = $block['className'] ?? null;
         <div class="carousel-inner">
             <?php
             $active = 'active';
-            foreach (get_field('slides') as $s) {
-                $img = wp_get_attachment_image_url($s, 'full');
-            ?>
-                <div class="carousel-item <?= $active ?>">
-                    <img src="<?= $img ?>" class="d-block w-100">
+            foreach ( get_field( 'slides' ) as $s ) {
+                $img = wp_get_attachment_image_url( $s, 'full' );
+            	?>
+                <div class="carousel-item <?= esc_attr( $active ); ?>">
+                    <img src="<?= esc_url( $img ); ?>" class="d-block w-100">
                 </div>
-            <?php
+            	<?php
                 $active = '';
             }
             ?>
         </div>
         <?php
-            $l = count(get_field('slides'));
-            if ($l > 1) { 
-            ?>
+		$l = count( get_field( 'slides' ) );
+		if ( $l > 1 ) {
+			?>
         <div class="carousel-indicators">
-                <?php
+			<?php
                 $active = 'active';
-                for ($i = 0; $i < $l; $i++) {
-                    ?>
+			for ( $i = 0; $i < $l; $i++ ) {
+				?>
                 <button type="button" data-bs-target="#carousel"
-                    data-bs-slide-to="<?= $i ?>"
-                    class="<?= $active ?>" aria-current="true"
-                    aria-label="Slide <?= $i ?>"></button>
+                    data-bs-slide-to="<?= esc_attr( $i ); ?>"
+                    class="<?= esc_attr( $active ); ?>" aria-current="true"
+                    aria-label="Slide <?= esc_attr( $i ); ?>"></button>
                     <?php
                     $active = '';
-                }
-                ?>
+			}
+			?>
         </div>
-                <?php
-            }
-            ?>
+			<?php
+		}
+		?>
     </div>
     <div class="hero__inner">
         <div class="container-xl my-auto">
             <div class="row">
                 <div class="col-md-6">
                     <h1>
-                        <?= get_field('title') ?>
+                        <?= esc_html( get_field( 'title' ) ); ?>
                     </h1>
                 </div>
             </div>
