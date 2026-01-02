@@ -24,7 +24,7 @@ $q = new WP_Query(
 				?>
 			<div class="col-md-4">
 				<a href="<?= esc_url( get_the_permalink() ); ?>"
-					class="latest_news__card">
+					class="latest_news__card h-100">
 					<img src="<?= esc_url( get_the_post_thumbnail_url( get_the_ID(), 'large' ) ); ?>"
 						alt="<?= esc_attr( get_the_title() ); ?>">
 					<div class="latest_news__inner">
