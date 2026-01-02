@@ -475,4 +475,60 @@ function pluralise($quantity, $singular, $plural=null)
             return $singular.'s';
     }
 }
-?>
+
+/**
+ * Get post excerpt with fallback to ACF content parsing
+ */
+function cb_get_post_excerpt( $post_id, $word_count = 30 ) {
+    // Try standard excerpt first
+    $excerpt = get_the_excerpt( $post_id );
+    
+    if ( ! empty( $excerpt ) ) {
+        return wp_trim_words( $excerpt, $word_count );
+    }
+    
+    // Try standard content
+    $content = get_post_field( 'post_content', $post_id );
+    $content = strip_shortcodes( $content );
+    $content = wp_strip_all_tags( $content );
+    
+    if ( ! empty( trim( $content ) ) ) {
+        return wp_trim_words( $content, $word_count );
+    }
+    
+    // Try to extract from ACF flexible content
+    if ( function_exists( 'have_rows' ) ) {
+        $text_content = '';
+        
+        // Common ACF field names that might contain text
+        $flex_fields = array( 'content', 'blocks', 'components', 'page_builder', 'sections' );
+        
+        foreach ( $flex_fields as $field_name ) {
+            if ( have_rows( $field_name, $post_id ) ) {
+                while ( have_rows( $field_name, $post_id ) ) {
+                    the_row();
+                    
+                    // Try to get content from various sub-fields
+                    $sub_fields = array( 'content', 'text', 'copy', 'description', 'title' );
+                    
+                    foreach ( $sub_fields as $sub_field ) {
+                        $field_value = get_sub_field( $sub_field );
+                        if ( ! empty( $field_value ) && is_string( $field_value ) ) {
+                            $text_content .= ' ' . wp_strip_all_tags( $field_value );
+                        }
+                    }
+                }
+                
+                if ( ! empty( trim( $text_content ) ) ) {
+                    break;
+                }
+            }
+        }
+        
+        if ( ! empty( trim( $text_content ) ) ) {
+            return wp_trim_words( $text_content, $word_count );
+        }
+    }
+    
+    return '';
+}
