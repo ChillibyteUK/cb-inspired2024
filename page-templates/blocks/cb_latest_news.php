@@ -33,7 +33,7 @@ $q = new WP_Query(
 							<?= esc_html( get_the_date( 'j / m / Y' ) ); ?>
 						</div>
 						<div class="latest_news__excerpt">
-							<?= wp_kses_post( wp_trim_words( get_the_content( null, false, get_the_ID() ), 30 ) ); ?>
+							<?= wp_kses_post( cb_get_post_excerpt( get_the_ID(), 30 ) ); ?>
 						</div>
 					</div>
 				</a>
