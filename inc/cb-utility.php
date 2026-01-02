@@ -477,7 +477,7 @@ function pluralise($quantity, $singular, $plural=null)
 }
 
 /**
- * Get post excerpt with fallback to ACF content parsing
+ * Get post excerpt with fallback to parsing block content
  */
 function cb_get_post_excerpt( $post_id, $word_count = 30 ) {
     // Try standard excerpt first
@@ -487,47 +487,33 @@ function cb_get_post_excerpt( $post_id, $word_count = 30 ) {
         return wp_trim_words( $excerpt, $word_count );
     }
     
-    // Try standard content
+    // Get the raw post content
     $content = get_post_field( 'post_content', $post_id );
-    $content = strip_shortcodes( $content );
-    $content = wp_strip_all_tags( $content );
     
-    if ( ! empty( trim( $content ) ) ) {
-        return wp_trim_words( $content, $word_count );
+    if ( empty( $content ) ) {
+        return '';
     }
     
-    // Try to extract from ACF flexible content
-    if ( function_exists( 'have_rows' ) ) {
-        $text_content = '';
+    // Parse blocks using WordPress's built-in parser
+    $blocks = parse_blocks( $content );
+    $text_content = '';
+    
+    foreach ( $blocks as $block ) {
+        // Render the block to get its HTML output
+        $rendered = render_block( $block );
         
-        // Common ACF field names that might contain text
-        $flex_fields = array( 'content', 'blocks', 'components', 'page_builder', 'sections' );
+        // Strip HTML tags to get plain text
+        $text = wp_strip_all_tags( $rendered );
         
-        foreach ( $flex_fields as $field_name ) {
-            if ( have_rows( $field_name, $post_id ) ) {
-                while ( have_rows( $field_name, $post_id ) ) {
-                    the_row();
-                    
-                    // Try to get content from various sub-fields
-                    $sub_fields = array( 'content', 'text', 'copy', 'description', 'title' );
-                    
-                    foreach ( $sub_fields as $sub_field ) {
-                        $field_value = get_sub_field( $sub_field );
-                        if ( ! empty( $field_value ) && is_string( $field_value ) ) {
-                            $text_content .= ' ' . wp_strip_all_tags( $field_value );
-                        }
-                    }
-                }
-                
-                if ( ! empty( trim( $text_content ) ) ) {
-                    break;
-                }
-            }
+        if ( ! empty( trim( $text ) ) ) {
+            $text_content .= ' ' . $text;
         }
-        
-        if ( ! empty( trim( $text_content ) ) ) {
-            return wp_trim_words( $text_content, $word_count );
-        }
+    }
+    
+    $text_content = trim( $text_content );
+    
+    if ( ! empty( $text_content ) ) {
+        return wp_trim_words( $text_content, $word_count );
     }
     
     return '';
