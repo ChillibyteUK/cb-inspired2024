@@ -1,10 +1,10 @@
 {
-    "key": "group_6734a990821ae",
-    "title": "CB Quote",
+    "key": "group_6970c2b14c241",
+    "title": "CB CTA",
     "fields": [
         {
-            "key": "field_6734a990961a2",
-            "label": "CB Quote",
+            "key": "field_6970c2b1cbde9",
+            "label": "CB CTA",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -12,7 +12,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "66",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -21,7 +21,7 @@
             "esc_html": 0
         },
         {
-            "key": "field_6734b861d6315",
+            "key": "field_6970cae0237ed",
             "label": "Background",
             "name": "background",
             "aria-label": "",
@@ -30,45 +30,22 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "allowed_colors": [
-                "grey-200",
-                "white",
-                "secondary-400"
+            "default_value": "white",
+            "allowed_colors": "",
+            "exclude_colors": [
+                "primary-400"
             ],
-            "exclude_colors": "",
             "return_format": "slug",
-            "allow_in_bindings": 1
+            "allow_in_bindings": 0
         },
         {
-            "key": "field_6734a99b961a3",
-            "label": "Quote",
-            "name": "quote",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "rows": 4,
-            "placeholder": "",
-            "new_lines": "br"
-        },
-        {
-            "key": "field_6734a9a0961a4",
-            "label": "Attribution",
-            "name": "attr",
+            "key": "field_6970c9b97c61c",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -85,6 +62,44 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_6970c9bf7c61d",
+            "label": "Content",
+            "name": "content",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_6970c9f97c61e",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -92,7 +107,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-quote"
+                "value": "acf\/cb-cta"
             }
         ]
     ],
@@ -105,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1768999340
+    "modified": 1768999703
 }

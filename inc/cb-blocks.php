@@ -3,6 +3,15 @@ function acf_blocks()
 {
     if (function_exists('acf_register_block_type')) {
 		acf_register_block_type(array(
+            'name'				=> 'cb_cta',
+            'title'				=> __('CB CTA'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_cta.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+		acf_register_block_type(array(
             'name'				=> 'cb_latest_news',
             'title'				=> __('CB Latest News'),
             'category'			=> 'layout',
