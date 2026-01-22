@@ -14,21 +14,29 @@ $colour = '';
 if ( 'blue-400' === $bgcolour ) {
 	$colour = 'has-white-color';
 }
+
+$level = get_field( 'level' ) ? get_field( 'level' ) : 'h2';
 ?>
-<section class="cta py-5 bg-<?=$bgcolour?> <?=$colour?>">
+<section class="cta py-5 bg-<?= esc_attr( $bgcolour ); ?> <?= esc_attr( $colour ); ?>">
     <div class="container-xl text-center" data-aos="zoom-in">
-		<h3 class="<?= $colour; ?>"><?= wp_kses_post( get_field( 'title' ) ); ?></h3>
-		<p><?= wp_kses_post( get_field( 'content' ) ); ?></p>
+		<<?= esc_attr( $level ); ?> class="h3 <?= esc_attr( $colour ); ?>"><?= wp_kses_post( get_field( 'title' ) ); ?></<?= esc_attr( $level ); ?>>
 		<?php
-		$link = get_field( 'link' );
-		if ( $link ) :
-			$link_url    = $link['url'];
-			$link_title  = $link['title'];
-			$link_target = $link['target'] ? $link['target'] : '_self';
+		if ( get_field( 'content' ) ) {
+			?>
+			<p><?= wp_kses_post( get_field( 'content' ) ); ?></p>
+			<?php
+		}		
+		$l = get_field( 'link' );
+		if ( $l ) {
+			$l_url    = $l['url'];
+			$l_title  = $l['title'];
+			$l_target = $l['target'] ? $l['target'] : '_self';
 			?>
 		<a class="btn btn-primary mt-3" href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
 			<?= esc_html( $link_title ); ?>
 		</a>
-		<?php endif; ?>
+			<?php
+		}
+		?>
 	</div>
 </section>
