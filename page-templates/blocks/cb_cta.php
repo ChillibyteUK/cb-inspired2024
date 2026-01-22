@@ -32,8 +32,8 @@ $level = get_field( 'level' ) ? get_field( 'level' ) : 'h2';
 			$l_title  = $l['title'];
 			$l_target = $l['target'] ? $l['target'] : '_self';
 			?>
-		<a class="btn btn-primary mt-3" href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
-			<?= esc_html( $link_title ); ?>
+		<a class="btn btn-primary mt-3" href="<?= esc_url( $l_url ); ?>" target="<?= esc_attr( $l_target ); ?>">
+			<?= esc_html( $l_title ); ?>
 		</a>
 			<?php
 		}
