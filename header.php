@@ -117,6 +117,7 @@ session_start();
     	<?php
     }
     ?>
+	<meta name="p:domain_verify" content="80e4add8511a5857d93d760982038183"/>
 </head>
 
 <body <?php body_class(); ?>
