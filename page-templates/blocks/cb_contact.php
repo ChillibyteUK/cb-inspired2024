@@ -5,7 +5,7 @@ $bg = get_field('colour') ? 'bg-' . get_field('colour') : null;
     class="split bg-grey-200 contact">
     <div class="container-fluid">
         <div class="h1 d-lg-none text-center pt-3">
-            Get in Touch
+            Are you thinking about a garden design project?
         </div>
         <div class="row h-100">
             <div class="col-lg-6 split__image order-lg-2" data-aos="fade">
