@@ -14,7 +14,7 @@ $bg = get_field('colour') ? 'bg-' . get_field('colour') : null;
             <div class="col-lg-6 h-100 my-auto order-lg-1" data-aos="fade">
                 <div class="ps-xl-3 py-5 my-auto text--left">
                     <h1 class="h1 d-none d-lg-block">
-                        Get in Touch
+                        Are you thinking about a garden design project?
                     </h1>
                     <?= get_field('content') ?>
                     <ul class="fa-ul my-4">
