@@ -2,17 +2,18 @@
 $bg = get_field('colour') ? 'bg-' . get_field('colour') : null;
 ?>
 <section
-    class="split bg-grey-200 contact">
+    class="py-5 bg-grey-200 contact">
     <div class="container">
-        <div class="row h-100">
-            <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12 mb-3">
                 <h1 class="h1">Are you thinking about a garden design project?</h1>
                 <?= get_field('content') ?>
             </div>
-            <div class="col-lg-6 h-100 my-auto" data-aos="fade">
+            <div class="col-lg-6 my-auto" data-aos="fade">
                 <?php echo do_shortcode('[gravityform id="1" title="false"]'); ?>
             </div>
-            <div class="col-lg-6 h-100 my-auto align-content-center" data-aos="fade">
+            <div class="col-lg-2 my-auto"></div>
+            <div class="col-lg-4 my-auto align-content-center" data-aos="fade">
                 <div class="ps-xl-3 py-5 my-auto">
                     <ul class="fa-ul my-4">
                         <li><span class="fa-li"><i class="fa-regular fa-envelope"></i></span> Email <?=do_shortcode('[contact_email]')?></li>
