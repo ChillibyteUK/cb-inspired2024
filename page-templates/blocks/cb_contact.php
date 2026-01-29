@@ -3,26 +3,24 @@ $bg = get_field('colour') ? 'bg-' . get_field('colour') : null;
 ?>
 <section
     class="split bg-grey-200 contact">
-    <div class="container-fluid">
-        <div class="h1 d-lg-none text-center pt-3">
-            Are you thinking about a garden design project?
-        </div>
+    <div class="container">
         <div class="row h-100">
-            <div class="col-lg-5 split__image order-lg-2" data-aos="fade">
-                <?= wp_get_attachment_image(get_field('image'), 'full') ?: get_stylesheet_directory_uri() . '/img/placeholder-800x450.png'; ?>
+            <div class="col-lg-12">
+                <h1 class="h1">Are you thinking about a garden design project?</h1>
+                <?= get_field('content') ?>
             </div>
-            <div class="col-lg-7 h-100 my-auto order-lg-1" data-aos="fade">
-                <div class="ps-xl-3 py-5 my-auto text--left">
-                    <h1 class="h1 d-none d-lg-block">
-                        Are you thinking about a garden design project?
-                    </h1>
-                    <?= get_field('content') ?>
+            <div class="col-lg-6 h-100 my-auto" data-aos="fade">
+                <?php echo do_shortcode('[gravityform id="1" title="false"]'); ?>
+            </div>
+            <div class="col-lg-6 h-100 my-auto align-content-center" data-aos="fade">
+                <div class="ps-xl-3 py-5 my-auto">
                     <ul class="fa-ul my-4">
                         <li><span class="fa-li"><i class="fa-regular fa-envelope"></i></span> Email <?=do_shortcode('[contact_email]')?></li>
                         <li><span class="fa-li"><i class="fa-solid fa-phone"></i></span> Jude <?=do_shortcode('[phone_judith]')?></li>
                         <li><span class="fa-li"><i class="fa-solid fa-phone"></i></span> Emily <?=do_shortcode('[phone_emily]')?></li>
                     </ul>
-                    <h2 class="h3">Find us on Instagram</h2>
+                    <b>Studio (by appointment only)</b><br>18 Lammas Road<br>Godalming<br>Surrey<br>GU7 1YL
+                    <h2 class="h3 mt-4">Find us on Instagram</h2>
                     <?php
                     $s = get_field('social', 'options');
                     $insta = $s['instagram_url'] ?? null;
