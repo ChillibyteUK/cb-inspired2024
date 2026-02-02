@@ -86,7 +86,7 @@ session_start();
                 "@type": "Organization",
                 "name": "Inspired Earth Design",
                 "url": "https://www.inspiredearthdesign.co.uk/",
-                "logo": "https://www.inspiredearthdesign.co.uk/wp-content/themes/cb-inspired2024/img/ied_logo_blue.svg",
+                "logo": "https://www.inspiredearthdesign.co.uk/wp-content/themes/cb-inspired2024/img/ied_logo_green.svg",
                 "description": "Inspired Earth Design is a multi-award winning landscape design company with a passion for creating incredible bespoke outdoor spaces. We have over 20 years experience in the industry, and have won several awards for our design work, including RHS Gold Medals. We create gardens and outdoor spaces that are beautiful, environmentally intelligent, with a carefully considered structure. In just six simple stages, we explain how we transport you from your current garden to the one that you're dreaming of.",
 				"address": {
 					"@type": "PostalAddress",
@@ -141,7 +141,7 @@ session_start();
             <div class="container">
                 <!-- Logo -->
                 <a class="navbar-brand" href="/">
-                    <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/ied_logo_blue.svg' ); ?>" alt="Inspired Earth Design" width="730" height="320" class="d-inline-block align-text-top">
+                    <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/ied_logo_green.svg' ); ?>" alt="Inspired Earth Design" width="730" height="320" class="d-inline-block align-text-top">
                 </a>
 
                 <!-- Burger Menu for Mobile -->
