@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 function block_usage_table_shortcode() {
 	// Get all block files from /blocks directory.
 	$blocks_dir  = get_stylesheet_directory() . '/blocks/';
-	$block_files = glob( $blocks_dir . 'cb_*.php' );
+	$block_files = glob( $blocks_dir . 'cb-*.php' );
 
 	if ( ! $block_files ) {
 		return '<p>No blocks found.</p>';
@@ -50,8 +50,8 @@ function block_usage_table_shortcode() {
 		if ( ! empty( $matches[1] ) ) {
 			$found_blocks = array_unique( $matches[1] );
 			foreach ( $found_blocks as $found_block ) {
-				// Normalize block name: cb-block-name -> cb_block_name.
-				$normalized = str_replace( '-', '_', $found_block );
+				// Normalize block name to match filename (hyphenated).
+				$normalized = str_replace( '_', '-', $found_block );
 				if ( isset( $usage_map[ $normalized ] ) ) {
 					$usage_map[ $normalized ][] = $post;
 				}
@@ -81,7 +81,7 @@ function block_usage_table_shortcode() {
 						<?php if ( empty( $posts_using_block ) ) : ?>
 							<em style="color: #999;">Not used</em>
 						<?php else : ?>
-							<ul style="margin: 0; padding-left: 20px;">
+							<ul style="margin: 0; padding-left: 20px; column-count: 2;">
 								<?php foreach ( $posts_using_block as $post ) : ?>
 									<li>
 										<a href="<?= esc_url( get_edit_post_link( $post->ID ) ); ?>" target="_blank">
