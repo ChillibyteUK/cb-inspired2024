@@ -21,7 +21,7 @@ $video_url = get_field( 'video' );
                     <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/ied_logo_white.svg' ); ?>" class="video_hero__logo" alt="Inspired Earth Design" width="340" height="150">
                     <h1 class="has-white-color mt-4"><?= esc_html( get_field( 'title' ) ); ?></h1>
                     <div class="has-600-font-size"><?= wp_kses_post( get_field( 'content' ) ); ?></div>
-                    <div class="d-flex flex-wrap gap-3 mt-4">
+                    <div class="d-flex flex-wrap gap-3 my-4">
                         <a href="/portfolio/" class="btn btn-white">Portfolio</a>
                         <a href="/contact-us/" class="btn btn-white">Enquire</a>
                     </div>

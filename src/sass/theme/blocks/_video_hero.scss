@@ -25,6 +25,10 @@
 	}
 
 	&__image {
-		filter: grayscale(1) saturate(1) brightness(0.75);
+		filter: grayscale(1) saturate(1) brightness(1) invert(1);
+		max-width: 200px;
+		max-height: 150px;
+		width: auto;
+		height: auto;
 	}
 }
