@@ -99,12 +99,12 @@ session_start();
                 "email": "hello@inspiredearthdesign.co.uk",
                 "contactPoint": [{
                         "@type": "ContactPoint",
-                        "telephone": "07917 208655",
+                        "telephone": "+44 7917 208655",
                         "contactType": "Jude Yeo"
                     },
                     {
                         "@type": "ContactPoint",
-                        "telephone": "07799 292573",
+                        "telephone": "+44 7799 292573",
                         "contactType": "Emily Grayshaw"
                     }
                 ],
@@ -136,30 +136,23 @@ session_start();
     }
     do_action( 'wp_body_open' );
     ?>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-grey-200">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand" href="/">
-                    <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/ied_logo_green.svg' ); ?>" alt="Inspired Earth Design" width="730" height="320" class="d-inline-block align-text-top">
-                </a>
-
-                <!-- Burger Menu for Mobile -->
-                <button class="navbar-toggler x collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Navbar Links -->
-                <div class="collapse navbar-collapse" id="navbarNav">
+    <header id="wrapperNavbar">
+        <nav class="navbar">
+            <button class="menu" id="menutoggle" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#rightOffcanvas" aria-controls="rightOffcanvas">
+                Menu <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="rightOffcanvas"
+                aria-labelledby="rightOffcanvasLabel">
+                <div class="offcanvas-body">
                     <?php
                     wp_nav_menu(
                         array(
                             'theme_location'  => 'primary_nav',
                             'container_class' => 'container-xl w-100',
-                            'menu_class'      => 'navbar-nav justify-content-end',
+                            'menu_class'      => 'navbar-nav justify-content-between gap-1',
                             'fallback_cb'     => '',
+                            'menu_id'         => 'navbarr',
                             'depth'           => 3,
                             'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
                         )
@@ -168,4 +161,13 @@ session_start();
                 </div>
             </div>
         </nav>
+        <?php
+        if ( ! is_front_page() ) {
+        	?>
+        <a class="site-logo" href="/">
+            <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/ied_logo_white.svg' ); ?>" alt="Inspired Earth Design" width="141" height="62" class="d-inline-block align-text-top">
+        </a>
+            <?php
+        }
+        ?>
     </header>
