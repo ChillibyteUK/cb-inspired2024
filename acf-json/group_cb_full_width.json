@@ -1,10 +1,10 @@
 {
-    "key": "group_67348c9c088ff",
-    "title": "CB Short Hero",
+    "key": "group_cb_full_width",
+    "title": "CB Full Width",
     "fields": [
         {
-            "key": "field_67348c9c23865",
-            "label": "CB Short Hero",
+            "key": "field_673de33b7336c",
+            "label": "CB Full Width",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -12,7 +12,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -21,11 +21,33 @@
             "esc_html": 0
         },
         {
-            "key": "field_67348c9c272dc",
-            "label": "Title (H1)",
-            "name": "title",
+            "key": "field_673de49f6ce86",
+            "label": "Background",
+            "name": "background",
             "aria-label": "",
-            "type": "text",
+            "type": "editor_palette",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "white",
+            "allowed_colors": "",
+            "exclude_colors": [
+                "primary-400"
+            ],
+            "return_format": "slug",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_673de3467336d",
+            "label": "Content",
+            "name": "content",
+            "aria-label": "",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -35,38 +57,11 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "placeholder": "H1",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_67348c9c2ea1e",
-            "label": "Slides",
-            "name": "slides",
-            "aria-label": "",
-            "type": "gallery",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "insert": "append",
-            "preview_size": "medium"
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -74,7 +69,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-short-hero"
+                "value": "acf\/cb-full-width"
             }
         ]
     ],
@@ -87,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731503515
+    "modified": 1768999669
 }

@@ -1,10 +1,10 @@
 {
-    "key": "group_6734a990821ae",
-    "title": "CB Quote",
+    "key": "group_cb_image_array",
+    "title": "CB Image Array",
     "fields": [
         {
-            "key": "field_6734a990961a2",
-            "label": "CB Quote",
+            "key": "field_673cc240b9e76",
+            "label": "CB Image Array",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -12,7 +12,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "66",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -21,35 +21,11 @@
             "esc_html": 0
         },
         {
-            "key": "field_6734b861d6315",
-            "label": "Background",
-            "name": "background",
+            "key": "field_673cc278fd5cc",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
-            "type": "editor_palette",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allowed_colors": [
-                "grey-200",
-                "white",
-                "secondary-400"
-            ],
-            "exclude_colors": "",
-            "return_format": "slug",
-            "allow_in_bindings": 1
-        },
-        {
-            "key": "field_6734a99b961a3",
-            "label": "Quote",
-            "name": "quote",
-            "aria-label": "",
-            "type": "textarea",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -60,15 +36,64 @@
             },
             "default_value": "",
             "maxlength": "",
-            "allow_in_bindings": 1,
-            "rows": 4,
+            "allow_in_bindings": 0,
             "placeholder": "",
-            "new_lines": "br"
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_6734a9a0961a4",
-            "label": "Attribution",
-            "name": "attr",
+            "key": "field_673cc512305ab",
+            "label": "Intro",
+            "name": "intro",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_673cc24bb9e77",
+            "label": "Images",
+            "name": "images",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_673cc51a305ac",
+            "label": "Outro",
+            "name": "outro",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -92,7 +117,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-quote"
+                "value": "acf\/cb-image-array"
             }
         ]
     ],
@@ -105,5 +130,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1768999340
+    "modified": 1732035874
 }

@@ -1,10 +1,10 @@
 {
-    "key": "group_673de33f76ca2",
-    "title": "CB Full Width",
+    "key": "group_cb_insta_panel",
+    "title": "CB Instagram Panel",
     "fields": [
         {
-            "key": "field_673de33b7336c",
-            "label": "CB Full Width",
+            "key": "field_673360fb09fbf",
+            "label": "CB Instagram Panel",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -12,7 +12,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -21,33 +21,11 @@
             "esc_html": 0
         },
         {
-            "key": "field_673de49f6ce86",
-            "label": "Background",
-            "name": "background",
+            "key": "field_6733610c09fc0",
+            "label": "Intro",
+            "name": "intro",
             "aria-label": "",
-            "type": "editor_palette",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "white",
-            "allowed_colors": "",
-            "exclude_colors": [
-                "primary-400"
-            ],
-            "return_format": "slug",
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_673de3467336d",
-            "label": "Content",
-            "name": "content",
-            "aria-label": "",
-            "type": "wysiwyg",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -57,11 +35,39 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6733619609fc1",
+            "label": "Images",
+            "name": "images",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": 6,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -69,7 +75,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-full-width"
+                "value": "acf\/cb-insta-panel"
             }
         ]
     ],
@@ -82,5 +88,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1768999669
+    "modified": 1731420583
 }

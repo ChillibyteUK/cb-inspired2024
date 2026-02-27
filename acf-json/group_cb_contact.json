@@ -1,10 +1,10 @@
 {
-    "key": "group_673360fac3f26",
-    "title": "CB Instagram Panel",
+    "key": "group_cb_contact",
+    "title": "CB Contact",
     "fields": [
         {
-            "key": "field_673360fb09fbf",
-            "label": "CB Instagram Panel",
+            "key": "field_673604bd322ad",
+            "label": "CB Contact",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,11 +21,11 @@
             "esc_html": 0
         },
         {
-            "key": "field_6733610c09fc0",
-            "label": "Intro",
-            "name": "intro",
+            "key": "field_673604dc322ae",
+            "label": "Content",
+            "name": "content",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -37,16 +37,16 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
+            "rows": 4,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         },
         {
-            "key": "field_6733619609fc1",
-            "label": "Images",
-            "name": "images",
+            "key": "field_67360527f8fba",
+            "label": "Image",
+            "name": "image",
             "aria-label": "",
-            "type": "gallery",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -57,8 +57,6 @@
             },
             "return_format": "id",
             "library": "all",
-            "min": "",
-            "max": 6,
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -66,8 +64,8 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "insert": "append",
-            "preview_size": "medium"
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
         }
     ],
     "location": [
@@ -75,7 +73,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-insta-panel"
+                "value": "acf\/cb-contact"
             }
         ]
     ],
@@ -88,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731420583
+    "modified": 1731598464
 }

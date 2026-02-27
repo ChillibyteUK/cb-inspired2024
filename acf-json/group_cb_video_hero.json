@@ -1,10 +1,10 @@
 {
-    "key": "group_673366e120e46",
-    "title": "CB Awards Slider",
+    "key": "group_cb_video_hero",
+    "title": "CB Video Hero",
     "fields": [
         {
-            "key": "field_673366e1c3a2b",
-            "label": "CB Awards Slider",
+            "key": "field_67517b81605d3",
+            "label": "CB Video Hero",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -19,6 +19,27 @@
             "message": "",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_67517b90605d4",
+            "label": "Video",
+            "name": "video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -26,7 +47,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-awards"
+                "value": "acf\/cb-video-hero"
             }
         ]
     ],
@@ -39,5 +60,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731421938
+    "modified": 1733393314
 }

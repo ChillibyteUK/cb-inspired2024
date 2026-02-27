@@ -1,10 +1,10 @@
 {
-    "key": "group_67517b803789a",
-    "title": "CB Video Hero",
+    "key": "group_cb_short_hero",
+    "title": "CB Short Hero",
     "fields": [
         {
-            "key": "field_67517b81605d3",
-            "label": "CB Video Hero",
+            "key": "field_67348c9c23865",
+            "label": "CB Short Hero",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,11 +21,11 @@
             "esc_html": 0
         },
         {
-            "key": "field_67517b90605d4",
-            "label": "Video",
-            "name": "video",
+            "key": "field_67348c9c272dc",
+            "label": "Title (H1)",
+            "name": "title",
             "aria-label": "",
-            "type": "file",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,12 +34,39 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "H1",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67348c9c2ea1e",
+            "label": "Slides",
+            "name": "slides",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
             "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
             "min_size": "",
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "allow_in_bindings": 0
+            "insert": "append",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -47,7 +74,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-video-hero"
+                "value": "acf\/cb-short-hero"
             }
         ]
     ],
@@ -60,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733393314
+    "modified": 1731503515
 }

@@ -1,10 +1,10 @@
 {
-    "key": "group_673604bc6a6d7",
-    "title": "CB Contact",
+    "key": "group_cb_full_hero",
+    "title": "CB Full Hero",
     "fields": [
         {
-            "key": "field_673604bd322ad",
-            "label": "CB Contact",
+            "key": "field_64d7cd195a046",
+            "label": "CB Full Hero",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,11 +21,11 @@
             "esc_html": 0
         },
         {
-            "key": "field_673604dc322ae",
-            "label": "Content",
-            "name": "content",
+            "key": "field_64d7cd245a047",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
-            "type": "textarea",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -36,17 +36,36 @@
             },
             "default_value": "",
             "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": 4,
             "placeholder": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_67360527f8fba",
-            "label": "Image",
-            "name": "image",
+            "key": "field_655b85dae8e61",
+            "label": "Content (H1)",
+            "name": "content",
             "aria-label": "",
-            "type": "image",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_655b862ae8e66",
+            "label": "Slides",
+            "name": "slides",
+            "aria-label": "",
+            "type": "gallery",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -57,6 +76,8 @@
             },
             "return_format": "id",
             "library": "all",
+            "min": "",
+            "max": "",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -64,8 +85,8 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "thumbnail"
+            "insert": "append",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -73,7 +94,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-contact"
+                "value": "acf\/cb-hero"
             }
         ]
     ],
@@ -86,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731598464
+    "modified": 1731498094
 }
