@@ -13,15 +13,15 @@ require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 require_once CB_THEME_DIR . '/inc/cb-block-usage.php';
 
 // Remove unwanted SVG filter injection WP (keep global styles for theme.json utility classes).
-remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 
 /**
  * Filter global styles to remove duotone SVG filters while keeping utility classes.
  */
 add_filter(
     'wp_get_global_stylesheet',
-    function ($stylesheet) {
-        $stylesheet = preg_replace('/<svg[^>]*>.*?<\/svg>/s', '', $stylesheet);
+    function ( $stylesheet ) {
+        $stylesheet = preg_replace( '/<svg[^>]*>.*?<\/svg>/s', '', $stylesheet );
         return $stylesheet;
     }
 );
@@ -32,8 +32,8 @@ add_filter(
 add_action(
     'after_setup_theme',
     function () {
-        add_theme_support('editor-styles');
-        add_editor_style('css/custom-editor-style.css');
+        add_theme_support( 'editor-styles' );
+        add_editor_style( 'css/custom-editor-style.css' );
     },
     5
 );
@@ -44,9 +44,9 @@ add_action(
 add_action(
     'after_setup_theme',
     function () {
-        remove_theme_support('editor-color-palette');
-        remove_theme_support('editor-gradient-presets');
-        remove_theme_support('editor-font-sizes');
+        remove_theme_support( 'editor-color-palette' );
+        remove_theme_support( 'editor-gradient-presets' );
+        remove_theme_support( 'editor-font-sizes' );
     },
     99
 );
@@ -54,84 +54,96 @@ add_action(
 /**
  * Ensure separate core block assets are loaded (performance nicety).
  */
-add_filter('should_load_separate_core_block_assets', '__return_true');
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
 // disable theme/plugin file editor.
 define( 'DISALLOW_FILE_EDIT', true );
 
-// Remove comment-reply.min.js from footer
-function remove_comment_reply_header_hook() {
-    wp_deregister_script( 'comment-reply' );
-}
-add_action('init', 'remove_comment_reply_header_hook');
-
-add_action('admin_menu', 'remove_comments_menu');
-function remove_comments_menu()
-{
-    remove_menu_page('edit-comments.php');
-}
-
-add_filter( 'theme_page_templates', 'child_theme_remove_page_template' );
+/**
+ * Removes specific page templates from the available templates list.
+ *
+ * @param array $page_templates The list of page templates.
+ * @return array The modified list of page templates.
+ */
 function child_theme_remove_page_template( $page_templates ) {
-    // unset($page_templates['page-templates/blank.php'],$page_templates['page-templates/empty.php'], $page_templates['page-templates/fullwidthpage.php'], $page_templates['page-templates/left-sidebarpage.php'], $page_templates['page-templates/right-sidebarpage.php'], $page_templates['page-templates/both-sidebarspage.php']);
-    unset($page_templates['page-templates/blank.php'], $page_templates['page-templates/empty.php'], $page_templates['page-templates/left-sidebarpage.php'], $page_templates['page-templates/right-sidebarpage.php'], $page_templates['page-templates/both-sidebarspage.php']);
+    unset(
+        $page_templates['page-templates/blank.php'],
+        $page_templates['page-templates/empty.php'],
+        $page_templates['page-templates/left-sidebarpage.php'],
+        $page_templates['page-templates/right-sidebarpage.php'],
+        $page_templates['page-templates/both-sidebarspage.php']
+    );
     return $page_templates;
 }
-add_action('after_setup_theme', 'remove_understrap_post_formats', 11);
-function remove_understrap_post_formats()
-{
-    remove_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
-}
+add_filter( 'theme_page_templates', 'child_theme_remove_page_template' );
 
-if (function_exists('acf_add_options_page')) {
+/**
+ * Removes support for specific post formats in the theme.
+ */
+function remove_understrap_post_formats() {
+    remove_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+}
+add_action( 'after_setup_theme', 'remove_understrap_post_formats', 11 );
+
+
+if ( function_exists( 'acf_add_options_page' ) ) {
     acf_add_options_page(
         array(
-            'page_title'     => 'Site-Wide Settings',
-            'menu_title'    => 'Site-Wide Settings',
-            'menu_slug'     => 'theme-general-settings',
-            'capability'    => 'edit_posts',
+            'page_title' => 'Site-Wide Settings',
+            'menu_title' => 'Site-Wide Settings',
+            'menu_slug'  => 'theme-general-settings',
+            'capability' => 'edit_posts',
         )
     );
 }
 
-function widgets_init()
-{
-    register_nav_menus(array(
-        'primary_nav' => __('Primary Nav', 'cb-inspired2024'),
-        'footer_menu1' => __('Footer Menu 1', 'cb-inspired2024'),
-        'footer_menu2' => __('Footer Menu 2', 'cb-inspired2024'),
-    ));
+/**
+ * Initializes widgets, menus, and theme supports.
+ *
+ * This function registers navigation menus, unregisters sidebars and menus,
+ * and adds theme support for custom editor color palettes.
+ */
+function widgets_init() {
+    register_nav_menus(
+        array(
+			'primary_nav'  => __( 'Primary Nav', 'cb-inspired2024' ),
+			'footer_menu1' => __( 'Footer Menu 1', 'cb-inspired2024' ),
+			'footer_menu2' => __( 'Footer Menu 2', 'cb-inspired2024' ),
+        )
+    );
 
+    unregister_sidebar( 'hero' );
+    unregister_sidebar( 'herocanvas' );
+    unregister_sidebar( 'statichero' );
+    unregister_sidebar( 'left-sidebar' );
+    unregister_sidebar( 'right-sidebar' );
+    unregister_sidebar( 'footerfull' );
+    unregister_nav_menu( 'primary' );
 
-    unregister_sidebar('hero');
-    unregister_sidebar('herocanvas');
-    unregister_sidebar('statichero');
-    unregister_sidebar('left-sidebar');
-    unregister_sidebar('right-sidebar');
-    unregister_sidebar('footerfull');
-    unregister_nav_menu('primary');
-
-    add_theme_support('disable-custom-colors');
+    add_theme_support( 'disable-custom-colors' );
 }
-add_action('widgets_init', 'widgets_init', 11);
+add_action( 'widgets_init', 'widgets_init', 11 );
 
-//Custom Dashboard Widget
-add_action('wp_dashboard_setup', 'register_cb_dashboard_widget');
-function register_cb_dashboard_widget()
-{
+/**
+ * Registers a custom dashboard widget for the Chillibyte theme.
+ */
+function register_cb_dashboard_widget() {
     wp_add_dashboard_widget(
         'cb_dashboard_widget',
         'Chillibyte',
         'cb_dashboard_widget_display'
     );
 }
+add_action( 'wp_dashboard_setup', 'register_cb_dashboard_widget' );
 
-function cb_dashboard_widget_display()
-{
-?>
+/**
+ * Displays the content of the Chillibyte dashboard widget.
+ */
+function cb_dashboard_widget_display() {
+	?>
     <div style="display: flex; align-items: center; justify-content: space-around;">
         <img style="width: 50%;"
-            src="<?= get_stylesheet_directory_uri() . '/img/cb-full.jpg'; ?>">
+            src="<?= esc_url( get_stylesheet_directory_uri() . '/img/cb-full.jpg' ); ?>">
         <a class="button button-primary" target="_blank" rel="noopener nofollow noreferrer"
             href="mailto:hello@chillibyte.co.uk">Contact</a>
     </div>
@@ -141,87 +153,57 @@ function cb_dashboard_widget_display()
         <p>Got a problem with your site, or want to make some changes & need us to take a look for you?</p>
         <p>Use the link above to get in touch and we'll get back to you ASAP.</p>
     </div>
-<?php
+	<?php
 }
 
 
 add_filter(
     'wpseo_breadcrumb_links',
-    function ($links) {
+    function ( $links ) {
         global $post;
-        if (is_singular('portfolio')) {
-            $t = get_the_category($post->ID);
+        if ( is_singular( 'portfolio' ) ) {
+            $t            = get_the_category( $post->ID );
             $breadcrumb[] = array(
-                'url' => '/portfolio/',
+                'url'  => '/portfolio/',
                 'text' => 'Portfolio',
             );
 
-            array_splice($links, 1, -2, $breadcrumb);
+            array_splice( $links, 1, -2, $breadcrumb );
         }
         return $links;
     }
 );
 
-// remove discussion metabox
-function cc_gutenberg_register_files()
-{
-    // script file
-    wp_register_script(
-        'cc-block-script',
-        get_stylesheet_directory_uri() . '/js/block-script.js', // adjust the path to the JS file
-        array('wp-blocks', 'wp-edit-post')
-    );
-    // register block editor script
-    register_block_type('cc/ma-block-files', array(
-        'editor_script' => 'cc-block-script'
-    ));
-}
-add_action('init', 'cc_gutenberg_register_files');
-
-function understrap_all_excerpts_get_more_link($post_excerpt)
-{
-    if (is_admin() || ! get_the_ID()) {
-        return $post_excerpt;
-    }
-    return $post_excerpt;
-}
-
-//* Remove Yoast SEO breadcrumbs from Revelanssi's search results
-add_filter('the_content', 'wpdocs_remove_shortcode_from_index');
-function wpdocs_remove_shortcode_from_index($content)
-{
-    if (is_search()) {
-        $content = strip_shortcodes($content);
-    }
-    return $content;
-}
-
-
-
-// GF really is pants.
 /**
  * Change submit from input to button
  *
  * Do not use example provided by Gravity Forms as it strips out the button attributes including onClick
+ *
+ * @param string $button_input The original input HTML.
+ * @param array  $form The Gravity Forms form array.
+ * @return string The updated button HTML.
  */
-function wd_gf_update_submit_button($button_input, $form)
-{
-    //save attribute string to $button_match[1]
-    preg_match("/<input([^\/>]*)(\s\/)*>/", $button_input, $button_match);
+function wd_gf_update_submit_button( $button_input, $form ) {
+    // save attribute string to $button_match[1].
+    preg_match( '/<input([^\/>]*)(\s\/)*>/', $button_input, $button_match );
 
-    //remove value attribute (since we aren't using an input)
-    $button_atts = str_replace("value='" . $form['button']['text'] . "' ", "", $button_match[1]);
+    // remove value attribute (since we aren't using an input).
+    $button_atts = str_replace( "value='" . $form['button']['text'] . "' ", '', $button_match[1] );
 
-    // create the button element with the button text inside the button element instead of set as the value
+    // create the button element with the button text inside the button element instead of set as the value.
     return '<button ' . $button_atts . '><span>' . $form['button']['text'] . '</span></button>';
 }
-add_filter('gform_submit_button', 'wd_gf_update_submit_button', 10, 2);
+add_filter( 'gform_submit_button', 'wd_gf_update_submit_button', 10, 2 );
 
-
-function cb_theme_enqueue()
-{
+/**
+ * Enqueues theme-specific scripts and styles.
+ *
+ * This function deregisters jQuery and disables certain styles and scripts
+ * that are commented out for potential use in the theme.
+ */
+function cb_theme_enqueue() {
     $the_theme = wp_get_theme();
-
+    // phpcs:disable
     // wp_enqueue_style('lightbox-stylesheet', get_stylesheet_directory_uri() . '/css/lightbox.min.css', array(), $the_theme->get('Version'));
     // wp_enqueue_style('slick-stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css', array(), $the_theme->get('Version'));
     // wp_enqueue_style('slick-stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css', array(), $the_theme->get('Version'));
@@ -229,63 +211,77 @@ function cb_theme_enqueue()
     // wp_enqueue_script('lightbox-scripts', get_stylesheet_directory_uri() . '/js/lightbox.min.js', array(), $the_theme->get('Version'), true);
     // wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js', array(), null, true);
     // wp_enqueue_script('slick-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.8.1', true);
-    wp_enqueue_style( 'aos-style', get_stylesheet_directory_uri() . '/css/aos.css', array() );
-    wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/js/aos.js', array(), null, true );
-
     // wp_enqueue_script('gsap-scripts', get_stylesheet_directory_uri() . '/js/gsap/gsap.min.js', array('jquery'), '1.8.1', true);
     // wp_enqueue_script('scrolltrigger-scripts', get_stylesheet_directory_uri() . '/js/gsap/ScrollTrigger.min.js', array('gsap-scripts'), null, true);
     // wp_enqueue_script('splittext-scripts', get_stylesheet_directory_uri() . '/js/gsap/SplitText.min.js', array('gsap-scripts'), null, true);
-
     // wp_enqueue_script('parallax', get_stylesheet_directory_uri() . '/js/parallax.min.js', array('jquery'), null, true);
+    // wp_deregister_script( 'jquery' );
+    // phpcs:enable
 
+    wp_enqueue_style( 'aos-style', get_stylesheet_directory_uri() . '/css/aos.css', array() ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+    wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/js/aos.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
-    wp_enqueue_style( 'swiper-style', get_stylesheet_directory_uri() . '/css/swiper-bundle.min.css', array() );
-    wp_enqueue_script( 'swiper', get_stylesheet_directory_uri() . '/js/swiper-bundle.min.js', array(), null, true );
+    wp_enqueue_style( 'swiper-style', get_stylesheet_directory_uri() . '/css/swiper-bundle.min.css', array() ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+    wp_enqueue_script( 'swiper', get_stylesheet_directory_uri() . '/js/swiper-bundle.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 }
-add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
+add_action( 'wp_enqueue_scripts', 'cb_theme_enqueue' );
 
 
 
-add_shortcode('phone_emily', function () {
-    if (get_field('contact_emily', 'options')) {
-        return '<a href="tel:' . parse_phone(get_field('contact_emily', 'options')) . '">' . get_field('contact_emily', 'options') . '</a>';
-    }
-    return;
-});
-add_shortcode('phone_judith', function () {
-    if (get_field('contact_judith', 'options')) {
-        return '<a href="tel:' . parse_phone(get_field('contact_judith', 'options')) . '">' . get_field('contact_judith', 'options') . '</a>';
-    }
-    return;
-});
-add_shortcode('phone_emily_btn', function () {
-    if (get_field('contact_emily', 'options')) {
-        return '<a href="tel:' . parse_phone(get_field('contact_emily', 'options')) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Emily</a>';
-    }
-    return;
-});
-add_shortcode('phone_judith_btn', function () {
-    if (get_field('contact_judith', 'options')) {
-        return '<a href="tel:' . parse_phone(get_field('contact_judith', 'options')) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Jude</a>';
-    }
-    return;
-});
-add_shortcode('email_btn', function () {
-    if (get_field('contact_email', 'options')) {
-        return '<a href="mailto:' . get_field('contact_email', 'options') . '" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Email Us</a>';
-    }
-    return;
-});
+add_shortcode(
+    'phone_emily',
+    function () {
+		if ( get_field( 'contact_emily', 'options' ) ) {
+			return '<a href="tel:' . parse_phone( get_field( 'contact_emily', 'options' ) ) . '">' . get_field( 'contact_emily', 'options' ) . '</a>';
+		}
+	}
+);
+add_shortcode(
+    'phone_judith',
+    function () {
+		if ( get_field( 'contact_judith', 'options' ) ) {
+			return '<a href="tel:' . parse_phone( get_field( 'contact_judith', 'options' ) ) . '">' . get_field( 'contact_judith', 'options' ) . '</a>';
+		}
+	}
+);
+add_shortcode(
+    'phone_emily_btn',
+    function () {
+		if ( get_field( 'contact_emily', 'options' ) ) {
+			return '<a href="tel:' . parse_phone( get_field( 'contact_emily', 'options' ) ) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Emily</a>';
+		}
+	}
+);
+add_shortcode(
+    'phone_judith_btn',
+    function () {
+		if ( get_field( 'contact_judith', 'options' ) ) {
+			return '<a href="tel:' . parse_phone( get_field( 'contact_judith', 'options' ) ) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Jude</a>';
+		}
+	}
+);
+add_shortcode(
+    'email_btn',
+    function () {
+		if ( get_field( 'contact_email', 'options' ) ) {
+			return '<a href="mailto:' . antispambot( get_field( 'contact_email', 'options' ) ) . '" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Email Us</a>';
+		}
+	}
+);
 
 
-// cb branding on wp-login.php
-function custom_login_logo()
-{
+/**
+ * Customizes the login logo on the WordPress login page.
+ *
+ * This function injects custom CSS to replace the default WordPress logo with a custom image.
+ * The custom logo is set to be 302px wide and 64px tall, and it is centered on the login page.
+ */
+function custom_login_logo() {
     $custom_logo_url = '/wp-content/themes/cb-inspired2024/img/cb-full.jpg';
     echo '
         <style type="text/css">
             #login h1 a, .login h1 a {
-                background-image: url(' . $custom_logo_url . ');
+                background-image: url(' . esc_url( $custom_logo_url ) . ');
                 width: 302px;
                 height: 64px;
                 background-size: contain;
@@ -295,52 +291,8 @@ function custom_login_logo()
         </style>
     ';
 }
-add_action('login_enqueue_scripts', 'custom_login_logo');
+add_action( 'login_enqueue_scripts', 'custom_login_logo' );
 
-// black thumbnails - fix alpha channel
-/**
- * Patch to prevent black PDF backgrounds.
- *
- * https://core.trac.wordpress.org/ticket/45982
- */
-// require_once ABSPATH . 'wp-includes/class-wp-image-editor.php';
-// require_once ABSPATH . 'wp-includes/class-wp-image-editor-imagick.php';
-
-// // phpcs:ignore PSR1.Classes.ClassDeclaration.MissingNamespace
-// final class ExtendedWpImageEditorImagick extends WP_Image_Editor_Imagick
-// {
-//     /**
-//      * Add properties to the image produced by Ghostscript to prevent black PDF backgrounds.
-//      *
-//      * @return true|WP_error
-//      */
-//     // phpcs:ignore PSR1.Methods.CamelCapsMethodName.NotCamelCaps
-//     protected function pdf_load_source()
-//     {
-//         $loaded = parent::pdf_load_source();
-
-//         try {
-//             $this->image->setImageAlphaChannel(Imagick::ALPHACHANNEL_REMOVE);
-//             $this->image->setBackgroundColor('#ffffff');
-//         } catch (Exception $exception) {
-//             error_log($exception->getMessage());
-//         }
-
-//         return $loaded;
-//     }
-// }
-
-// /**
-//  * Filters the list of image editing library classes to prevent black PDF backgrounds.
-//  *
-//  * @param array $editors
-//  * @return array
-//  */
-// add_filter('wp_image_editors', function (array $editors): array {
-//     array_unshift($editors, ExtendedWpImageEditorImagick::class);
-
-//     return $editors;
-// });
 
 /**
  * Retrieves a child area page by its slug under the 'areas' parent page.
@@ -407,18 +359,18 @@ function cb_render_areas_we_cover_from_taxonomy() {
             echo '<ul class="areas__list">';
 
             foreach ( $areas as $term ) {
-            $slug = $term->slug; // e.g. "guildford".
-            $page = cb_get_area_page_by_slug( $slug );
+				$slug = $term->slug; // e.g. "guildford".
+				$page = cb_get_area_page_by_slug( $slug );
 
-            echo '<li class="areas__item">';
-            if ( $page ) {
-                echo '<a class="areas__link" href="' . esc_url( get_permalink( $page->ID ) ) . '">'
+				echo '<li class="areas__item">';
+				if ( $page ) {
+					echo '<a class="areas__link" href="' . esc_url( get_permalink( $page->ID ) ) . '">'
                     . esc_html( $term->name ) . '</a>';
-            } else {
-                echo '<span class="areas__text">' . esc_html( $term->name ) . '</span>';
-            }
-            echo '</li>';
-        }
+				} else {
+					echo '<span class="areas__text">' . esc_html( $term->name ) . '</span>';
+				}
+				echo '</li>';
+			}
 
             echo '</ul>';
         }

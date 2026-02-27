@@ -27,7 +27,7 @@ $level = get_field( 'level' ) ? get_field( 'level' ) : 'h2';
 		<?php
 		if ( get_field( 'content' ) ) {
 			?>
-			<p><?= wp_kses_post( get_field( 'content' ) ); ?></p>
+			<?= do_shortcode( wp_kses_post( get_field( 'content' ) ) ); ?>
 			<?php
 		}
 		$l = get_field( 'link' );
