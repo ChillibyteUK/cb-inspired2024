@@ -1,3 +1,13 @@
+<?php
+/**
+ * Block template for CB Portfolio.
+ *
+ * @package cb-inspired2024
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+?>
 <section class="portfolio">
     <div class="container-xl my-auto py-5">
         <h2 class="mb-5" data-aos="fade">Portfolio</h2>

@@ -1,4 +1,12 @@
 <?php
+/**
+ * Block template for CB Insta Panel.
+ *
+ * @package cb-inspired2024
+ */
+
+defined( 'ABSPATH' ) || exit;
+
 $s = get_field('social', 'options');
 $insta = $s['instagram_url'] ?? null
 ?>

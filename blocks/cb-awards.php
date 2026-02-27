@@ -1,3 +1,13 @@
+<?php
+/**
+ * Block template for CB Awards.
+ *
+ * @package cb-inspired2024
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+?>
 <section class="awards py-5 bg-grey-200">
     <div class="container-xl py-5">
         <div class="row">
@@ -9,12 +19,12 @@
                     <div class="swiper-wrapper">
                         <?php
                         $d = 0;
-                        foreach (get_field('badges', 'option') as $b) {
-                        ?>
-                            <div class="swiper-slide" data-aos="fade" data-aos-delay="<?=$d?>">
-                                <?= wp_get_attachment_image($b, 'full', false, array('class' => 'awards__badge')) ?>
+                        foreach ( get_field( 'badges', 'option' ) as $b ) {
+                            ?>
+                            <div class="swiper-slide" data-aos="fade" data-aos-delay="<?= esc_attr( $d ); ?>">
+                                <?= wp_get_attachment_image( $b, 'full', false, array( 'class' => 'awards__badge' ) ); ?>
                             </div>
-                        <?php
+                            <?php
                             $d += 200;
                         }
                         ?>
@@ -29,8 +39,10 @@
     </div>
 </section>
 <?php
-add_action('wp_footer', function () {
-?>
+add_action(
+    'wp_footer',
+    function () {
+        ?>
     <script>
         const swiper2 = new Swiper('.awards__swiper', {
             slidesPerView: 4, // Shows 4 cards at a time
@@ -65,5 +77,7 @@ add_action('wp_footer', function () {
             }
         });
     </script>
-<?php
-}, 9999);
+        <?php
+    },
+    9999
+);

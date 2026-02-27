@@ -7,25 +7,29 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$bgcolour = get_field('background') ?: 'white';
+$bgcolour = get_field( 'background' ) ? get_field( 'background' ) : 'white';
 
 $colour = '';
 
-if ( 'blue-400' === $bgcolour ) {
-	$colour = 'has-white-color';
+// Support Gutenberg color picker.
+$bg = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
+$fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
+
+if ( 'has-blue-400-background-color' === $bg ) {
+	$fg = 'has-white-color';
 }
 
 $level = get_field( 'level' ) ? get_field( 'level' ) : 'h2';
 ?>
-<section class="cta py-5 bg-<?= esc_attr( $bgcolour ); ?> <?= esc_attr( $colour ); ?>">
+<section class="cta py-5 <?= esc_attr( $bg . ' ' . $fg ); ?>">
     <div class="container-xl text-center" data-aos="zoom-in">
-		<<?= esc_attr( $level ); ?> class="h3 <?= esc_attr( $colour ); ?>"><?= wp_kses_post( get_field( 'title' ) ); ?></<?= esc_attr( $level ); ?>>
+		<<?= esc_attr( $level ); ?> class="h3"><?= wp_kses_post( get_field( 'title' ) ); ?></<?= esc_attr( $level ); ?>>
 		<?php
 		if ( get_field( 'content' ) ) {
 			?>
 			<p><?= wp_kses_post( get_field( 'content' ) ); ?></p>
 			<?php
-		}		
+		}
 		$l = get_field( 'link' );
 		if ( $l ) {
 			$l_url    = $l['url'];

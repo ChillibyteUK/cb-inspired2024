@@ -1,4 +1,12 @@
 <?php
+/**
+ * Block template for CB Video Hero.
+ *
+ * @package cb-inspired2024
+ */
+
+defined( 'ABSPATH' ) || exit;
+
 $videoUrl = get_field('video');
 ?>
 <section class="video_hero position-relative overflow-hidden vh-100">

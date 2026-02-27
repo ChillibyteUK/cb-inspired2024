@@ -1,3 +1,13 @@
+<?php
+/**
+ * Block template for CB Image Array.
+ *
+ * @package cb-inspired2024
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+?>
 <section class="image_array py-5">
     <div class="container-xl">
         <h2 class="text-center"><?= get_field('title') ?></h2>

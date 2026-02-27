@@ -1,3 +1,13 @@
+<?php
+/**
+ * Block template for CB Portfolio Grid.
+ *
+ * @package cb-inspired2024
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+?>
 <section class="portfolio_grid py-5">
     <div class="container-xl">
         <div class="row g-4">

@@ -1,22 +1,67 @@
 <?php
-// Exit if accessed directly.
-defined('ABSPATH') || exit;
+/**
+ * Theme functions and definitions
+ *
+ * @package cb-inspired2024
+ */
 
-// require_once CB_THEME_DIR . '/inc/cb-noblog.php';
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
+require_once CB_THEME_DIR . '/inc/cb-block-usage.php';
 
-// Remove unwanted SVG filter injection WP
-remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+// Remove unwanted SVG filter injection WP (keep global styles for theme.json utility classes).
 remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
-// disable theme/plugin file editor
-define('DISALLOW_FILE_EDIT', true);
+/**
+ * Filter global styles to remove duotone SVG filters while keeping utility classes.
+ */
+add_filter(
+    'wp_get_global_stylesheet',
+    function ($stylesheet) {
+        $stylesheet = preg_replace('/<svg[^>]*>.*?<\/svg>/s', '', $stylesheet);
+        return $stylesheet;
+    }
+);
+
+/**
+ * Editor styles: opt-in so WP loads editor styles in the block editor.
+ */
+add_action(
+    'after_setup_theme',
+    function () {
+        add_theme_support('editor-styles');
+        add_editor_style('css/custom-editor-style.css');
+    },
+    5
+);
+
+/**
+ * Neutralise legacy palette/font-size support (theme.json is authoritative).
+ */
+add_action(
+    'after_setup_theme',
+    function () {
+        remove_theme_support('editor-color-palette');
+        remove_theme_support('editor-gradient-presets');
+        remove_theme_support('editor-font-sizes');
+    },
+    99
+);
+
+/**
+ * Ensure separate core block assets are loaded (performance nicety).
+ */
+add_filter('should_load_separate_core_block_assets', '__return_true');
+
+// disable theme/plugin file editor.
+define( 'DISALLOW_FILE_EDIT', true );
 
 // Remove comment-reply.min.js from footer
-function remove_comment_reply_header_hook()
-{
-    wp_deregister_script('comment-reply');
+function remove_comment_reply_header_hook() {
+    wp_deregister_script( 'comment-reply' );
 }
 add_action('init', 'remove_comment_reply_header_hook');
 
@@ -26,9 +71,8 @@ function remove_comments_menu()
     remove_menu_page('edit-comments.php');
 }
 
-add_filter('theme_page_templates', 'child_theme_remove_page_template');
-function child_theme_remove_page_template($page_templates)
-{
+add_filter( 'theme_page_templates', 'child_theme_remove_page_template' );
+function child_theme_remove_page_template( $page_templates ) {
     // unset($page_templates['page-templates/blank.php'],$page_templates['page-templates/empty.php'], $page_templates['page-templates/fullwidthpage.php'], $page_templates['page-templates/left-sidebarpage.php'], $page_templates['page-templates/right-sidebarpage.php'], $page_templates['page-templates/both-sidebarspage.php']);
     unset($page_templates['page-templates/blank.php'], $page_templates['page-templates/empty.php'], $page_templates['page-templates/left-sidebarpage.php'], $page_templates['page-templates/right-sidebarpage.php'], $page_templates['page-templates/both-sidebarspage.php']);
     return $page_templates;
@@ -68,42 +112,8 @@ function widgets_init()
     unregister_nav_menu('primary');
 
     add_theme_support('disable-custom-colors');
-    add_theme_support(
-        'editor-color-palette',
-        array(
-            array(
-                'name'  => 'Primary Green',
-                'slug'  => 'primary-400',
-                'color' => '#5F8575',
-            ),
-            array(
-                'name'  => 'Secondary Peach ',
-                'slug'  => 'secondary-400',
-                'color' => '#f3cfc6',
-            ),
-            array(
-                'name'  => 'Secondary Blue',
-                'slug'  => 'blue-400',
-                'color' => '#5784a1',
-            ),
-            array(
-                'name'  => 'Grey',
-                'slug'  => 'grey-200',
-                'color' => '#fcf3f1',
-            ),
-            array(
-                'name'  => 'White',
-                'slug'  => 'white',
-                'color' => '#ffffff',
-            ),
-        )
-    );
 }
 add_action('widgets_init', 'widgets_init', 11);
-
-
-remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
-remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
 //Custom Dashboard Widget
 add_action('wp_dashboard_setup', 'register_cb_dashboard_widget');
