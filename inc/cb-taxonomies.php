@@ -36,3 +36,26 @@ function cb_register_taxonomies() {
     register_taxonomy( 'area', array( 'page' ), $args );
 }
 add_action( 'init', 'cb_register_taxonomies' );
+
+/**
+ * Display instructions on the Areas taxonomy admin page.
+ *
+ * @return void
+ */
+function cb_area_taxonomy_instructions() {
+    $screen = get_current_screen();
+    if ( $screen && 'edit-area' === $screen->id ) {
+        ?>
+        <div class="notice notice-info">
+            <p>
+                <strong>How Areas Work:</strong><br>
+                1. Create hierarchical terms: Parent terms are counties/regions, child terms are specific areas.<br>
+                2. Create matching pages under <code>/areas/</code> with slugs matching the term slugs (e.g., <code>/areas/guildford/</code>).<br>
+                3. The theme will automatically link areas to pages if a matching page exists. <strong>No need to assign terms to pages.</strong><br>
+                4. Areas display on the "Areas We Cover" block—use the hierarchy to organise by county/region.
+            </p>
+        </div>
+        <?php
+    }
+}
+add_action( 'admin_notices', 'cb_area_taxonomy_instructions' );
