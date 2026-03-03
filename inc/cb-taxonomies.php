@@ -24,7 +24,7 @@ function cb_register_taxonomies() {
         'public'             => false,
         'publicly_queryable' => false,
         'hierarchical'       => true,
-        'show_ui'            => false,
+        'show_ui'            => true,
         'show_in_nav_menus'  => false,
         'show_tagcloud'      => false,
         'show_in_quick_edit' => false,
