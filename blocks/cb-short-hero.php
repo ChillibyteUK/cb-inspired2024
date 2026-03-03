@@ -54,6 +54,15 @@ $class = $block['className'] ?? null;
                     <h1>
                         <?= esc_html( get_field( 'title' ) ); ?>
                     </h1>
+					<?php
+					if ( get_field( 'subtitle' ) ) {
+						?>
+					<h2>
+						<?= esc_html( get_field( 'subtitle' ) ); ?>
+					</h2>
+						<?php
+					}
+					?>
                 </div>
             </div>
         </div>

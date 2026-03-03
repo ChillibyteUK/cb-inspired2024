@@ -1,43 +1,47 @@
 .hero {
+  width: 100%;
+  height: 100vh;
+  &--short {
+    height: max(400px, 50vh);
+  }
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  &__inner {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    align-content: center;
     width: 100%;
-    height: 100vh;
-    &--short {
-        height: max(400px,50vh);
+    height: 100%;
+  }
+  h1,
+  h2 {
+    color: white;
+  }
+  h2 {
+    font-size: var(--fs-600);
+  }
+  &__content {
+    color: white;
+    font-size: var(--fs-500);
+  }
+  .carousel {
+    height: 100%;
+  }
+  .carousel-inner {
+    height: 100%;
+    img {
+      height: 100%;
+      object-fit: cover;
     }
-    overflow: hidden;
-    position: relative;
-    isolation: isolate;
-    &__inner {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        display: grid;
-        align-content: center;
-        width: 100%;
-        height: 100%;
-    }
-    h1 {
-        color: white;
-    }
-    &__content {
-        color: white;
-        font-size: var(--fs-500);
-    }
-    .carousel {
-        height: 100%;
-    }
-    .carousel-inner {
-        height: 100%;
-        img {
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-    .carousel-item {
-        height: 100%;
-    }
+  }
+  .carousel-item {
+    height: 100%;
+  }
 }
 
 .object-fit-cover {
-    object-fit: cover;
+  object-fit: cover;
 }
