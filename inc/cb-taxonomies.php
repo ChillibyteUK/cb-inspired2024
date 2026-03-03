@@ -24,17 +24,15 @@ function cb_register_taxonomies() {
         'public'             => false,
         'publicly_queryable' => false,
         'hierarchical'       => true,
-        'show_ui'            => true,
-        'show_in_nav_menus'  => true,
+        'show_ui'            => false,
+        'show_in_nav_menus'  => false,
         'show_tagcloud'      => false,
-        'show_in_quick_edit' => true,
-        'show_admin_column'  => true,
-        'show_in_rest'       => true,
+        'show_in_quick_edit' => false,
+        'show_admin_column'  => false,
+        'show_in_rest'       => false,
         'rewrite'            => false,
     );
-    
-    // Register the taxonomy without associating it to any post type initially.
-    // It can be associated with post types as needed.
+
     register_taxonomy( 'area', array( 'page' ), $args );
 }
 add_action( 'init', 'cb_register_taxonomies' );

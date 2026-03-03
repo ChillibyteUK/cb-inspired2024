@@ -14,8 +14,8 @@ $class = $block['className'] ?? null;
         <div class="carousel-inner">
             <?php
             $active = 'active';
-            foreach ( get_field( 'slides' ) as $s ) {
-                $img = wp_get_attachment_image_url( $s, 'full' );
+            foreach ( get_field( 'slides' ) as $slide ) {
+                $img = wp_get_attachment_image_url( $slide, 'full' );
             	?>
                 <div class="carousel-item <?= esc_attr( $active ); ?>">
                     <img src="<?= esc_url( $img ); ?>" class="d-block w-100">
