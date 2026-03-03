@@ -27,8 +27,8 @@ function cb_register_taxonomies() {
         'show_ui'            => true,
         'show_in_nav_menus'  => false,
         'show_tagcloud'      => false,
-        'show_in_quick_edit' => true, //false,
-        'show_admin_column'  => true, //false,
+        'show_in_quick_edit' => false,
+        'show_admin_column'  => false,
         'show_in_rest'       => false,
         'rewrite'            => false,
     );
