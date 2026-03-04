@@ -17,7 +17,7 @@ $video_url = get_field( 'video' );
     <div class="video_hero__inner">
         <div class="container">
             <div class="row">
-                <div class="col-md-7 video_hero__content text-white p-5" data-aos="fade-up">
+                <div class="col-lg-8 col-xl-6 video_hero__content text-white p-5" data-aos="fade-up">
                     <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/ied_logo_white.svg' ); ?>" class="video_hero__logo" alt="Inspired Earth Design" width="250" height="110">
                     <h1 class="has-white-color mt-4 has-700-font-size"><?= esc_html( get_field( 'title' ) ); ?></h1>
                     <div class="has-500-font-size"><?= wp_kses_post( get_field( 'content' ) ); ?></div>
