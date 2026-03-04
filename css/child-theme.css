@@ -21710,8 +21710,8 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   padding: 0 1rem;
 }
 .video_hero__logo {
-  width: 340px;
-  height: 150px;
+  width: 250px;
+  height: 110px;
 }
 .video_hero__image {
   filter: invert(1) grayscale(1) brightness(1.5) contrast(1.5);
