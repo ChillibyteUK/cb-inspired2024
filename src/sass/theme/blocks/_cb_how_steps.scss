@@ -1,0 +1,37 @@
+.cb-how-steps {
+	&__title {
+		margin-bottom: 4rem;
+		text-wrap: balance;
+		text-align: center;
+		font-size: var(--fs-900);
+	}
+
+	&__step {
+		border-left: 2px solid var(--col-grey-600);
+		height: 100%;
+		padding-left: 1.5rem;
+		position: relative;
+	}
+
+	&__number {
+		color: var(--col-grey-600);
+		font-family: var(--ff-title);
+		font-size: var(--fs-900);
+		font-weight: var(--fw-900);
+		line-height: 0.9;
+		margin-bottom: 1rem;
+	}
+
+	&__step-title {
+		margin-bottom: 0.75rem;
+	}
+
+	&__detail {
+		color: var(--body-color);
+		line-height: 1.7;
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

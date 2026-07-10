@@ -11,7 +11,7 @@ fi
 
 # Convert to lowercase and replace spaces with underscores
 base_slug=$(echo "$block_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
-block_slug="cb_${base_slug}"
+block_slug="${base_slug}"
 
 # Define file paths
 php_file="./blocks/${block_slug}.php"

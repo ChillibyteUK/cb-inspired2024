@@ -1,0 +1,112 @@
+.cb-curated-projects {
+  background-color: var(--col-primary-400);
+  color: var(--col-grey);
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    color: inherit;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    color: inherit;
+    margin-bottom: 0;
+    max-width: 42rem;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: 1px solid currentColor !important;
+    color: var(--col-grey);
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--col-grey);
+      color: var(--col-primary-400);
+    }
+  }
+
+  &__stack {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  &__card {
+    color: var(--col-grey);
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--col-grey);
+
+      .cb-curated-projects__media::before {
+        transform: scale(1.04);
+      }
+
+      .cb-curated-projects__overlay {
+        opacity: 0.92;
+      }
+    }
+  }
+
+  &__card--featured {
+    min-height: 100%;
+  }
+
+  &__media {
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      background-image: var(--cb-curated-project-image);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: "";
+      inset: 0;
+      position: absolute;
+      transition: transform var(--transition);
+    }
+  }
+
+  &__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 35%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+    inset: 0;
+    opacity: 0.82;
+    position: absolute;
+    transition: opacity var(--transition);
+  }
+
+  &__project-title {
+    bottom: 1.25rem;
+    color: var(--col-grey);
+    font-size: var(--fs-500);
+    font-weight: var(--fw-700);
+    left: 1.25rem;
+    line-height: 1.1;
+    position: absolute;
+    right: 1.25rem;
+    z-index: 1;
+  }
+
+  @media (max-width: 991.98px) {
+    &__header {
+      margin-bottom: 1.5rem;
+    }
+
+    &__stack {
+      gap: 1rem;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.cb-award-marquee {
+	background-color: var(--col-grey);
+	overflow: hidden;
+
+	&__viewport {
+		overflow: hidden;
+		width: 100%;
+	}
+
+	&__track {
+		align-items: center;
+		display: flex;
+		width: max-content;
+		will-change: transform;
+	}
+
+	&__set {
+		align-items: center;
+		display: flex;
+		flex-shrink: 0;
+		gap: clamp(2rem, 4vw, 4.5rem);
+		padding-inline: clamp(1.5rem, 3vw, 3rem);
+	}
+
+	&__item {
+		align-items: center;
+		display: flex;
+		flex: 0 0 auto;
+		justify-content: center;
+	}
+
+	&__image {
+		display: block;
+		height: clamp(3.5rem, 7vw, 6rem);
+		max-width: none;
+		object-fit: contain;
+		width: auto;
+	}
+}
