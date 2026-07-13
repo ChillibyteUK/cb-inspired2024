@@ -1,6 +1,6 @@
 .footer {
     position: relative;
-    background-color: var(--col-blue-400);
+    background-color: var(--col-green-600);
     font-weight: var(--fw-300);
     font-size: var(--fs-300);
     color: #fff !important;
@@ -9,7 +9,7 @@
         font-weight: var(--fw-300);
         color: #fff !important;
         &:hover {
-            color: var(--col-secondary-400) !important;
+            color: var(--col-grey-200) !important;
         }
     }
 

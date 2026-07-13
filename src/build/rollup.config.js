@@ -3,8 +3,8 @@
 const path = require('path')
 const { babel } = require('@rollup/plugin-babel')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
-import commonjs from '@rollup/plugin-commonjs'
-import multi from '@rollup/plugin-multi-entry'
+const commonjs = require('@rollup/plugin-commonjs')
+const multi = require('@rollup/plugin-multi-entry')
 const replace = require('@rollup/plugin-replace')
 const banner = require('./banner.js')
 

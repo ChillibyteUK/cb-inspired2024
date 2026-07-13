@@ -22,9 +22,15 @@
           "origin": "theme"
         },
         {
+          "name": "green-600",
+          "slug": "green-600",
+          "color": "hsl(109 8% 27%)",
+          "origin": "theme"
+        },
+        {
           "name": "secondary-400",
           "slug": "secondary-400",
-          "color": "hsl(12 65% 86%)",
+          "color": "var(--col-grey-200)",
           "origin": "theme"
         },
         {
@@ -42,7 +48,7 @@
         {
           "name": "grey-200",
           "slug": "grey-200",
-          "color": "#ede4d8",
+          "color": "hsl(34 37% 89%)",
           "origin": "theme"
         },
         {

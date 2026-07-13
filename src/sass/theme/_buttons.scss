@@ -22,11 +22,11 @@
 }
 
 .btn-primary {
-    background-color: var(--col-blue-400);
+    background-color: var(--col-green-600);
     color: white;
 
     &:hover {
-        background-color: var(--col-secondary-400);
+        background-color: var(--col-grey-200);
         color: black;
     }
 
@@ -37,16 +37,17 @@
     color: black;
 
     &:hover {
-        background-color: var(--col-secondary-400);
+        background-color: var(--col-grey-200);
         color: black;
     }
 }
 
+.bg-green-600 .btn-primary,
 .bg-blue-400 .btn-primary {
-    background-color: color-mix(in srgb, var(--col-blue-400), white 20%);
+    background-color: color-mix(in srgb, var(--col-green-600), white 20%);
 
     &:hover {
-        background-color: var(--col-secondary-400);
+        background-color: var(--col-grey-200);
         color: black;
     }
 }
