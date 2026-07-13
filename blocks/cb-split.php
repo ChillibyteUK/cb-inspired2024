@@ -29,7 +29,7 @@ $img = wp_get_attachment_image_url( get_field( 'image' ), 'full' ) ? wp_get_atta
             <div class="col-lg-6 split__image <?= esc_attr( $image_order ); ?>" data-aos="fade">
                 <?php
                 $image_html = wp_get_attachment_image( get_field( 'image' ), 'full' );
-                echo $image_html ? $image_html : '<img src="' . esc_url( get_stylesheet_directory_uri() . '/img/placeholder-800x450.png' ) . '" alt="Placeholder">';
+                echo $image_html ? wp_kses_post( $image_html ) : '<img src="' . esc_url( get_stylesheet_directory_uri() . '/img/placeholder-800x450.png' ) . '" alt="Placeholder">';
                 ?>
             </div>
             <div class="col-lg-6 h-100 my-auto <?= esc_attr( $text_order ); ?>" data-aos="fade">
@@ -37,7 +37,7 @@ $img = wp_get_attachment_image_url( get_field( 'image' ), 'full' ) ? wp_get_atta
                     <h2 class="h2 d-none d-lg-block">
                         <?= esc_html( get_field( 'title' ) ); ?>
                     </h2>
-                    <?= wp_kses_post( get_field( 'content' ) ); ?>
+                    <?= do_shortcode( wp_kses_post( get_field( 'content' ) ) ); ?>
                     <?php
                     if ( get_field( 'link' ) ?? null ) {
                         $l = get_field( 'link' );
