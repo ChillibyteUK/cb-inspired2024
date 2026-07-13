@@ -20278,6 +20278,16 @@ body .gform_wrapper .gform_footer .bg-blue-400 button[type=submit]:hover,
 .contact {
   padding-top: 4rem;
 }
+@media (min-width: 1200px) {
+  .contact .text--left {
+    max-width: 670px;
+  }
+}
+@media (min-width: 1400px) {
+  .contact .text--left {
+    max-width: 820px;
+  }
+}
 
 .news .news__grid,
 .latest_news .news__grid,

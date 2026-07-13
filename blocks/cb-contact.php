@@ -15,7 +15,7 @@ $bg = get_field( 'colour' ) ? 'bg-' . get_field( 'colour' ) : null;
         <div class="row">
             <div class="col-lg-12 mb-3">
                 <h1 class="h1">Are you thinking about a garden design project?</h1>
-                <?= get_field( 'content' ); ?>
+                <?= esc_html( get_field( 'content' ) ); ?>
             </div>
             <div class="col-lg-6 my-auto" data-aos="fade">
                 <?= do_shortcode( '[gravityform id="1" title="false"]' ); ?>
