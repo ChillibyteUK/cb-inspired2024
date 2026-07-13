@@ -20750,6 +20750,39 @@ body .gform_wrapper .gform_footer .bg-blue-400 button[type=submit]:hover,
   }
 }
 
+.cb-lp-testimonial {
+  padding: 4rem 0;
+}
+.cb-lp-testimonial__title {
+  margin-bottom: 3rem;
+  text-align: center;
+  text-wrap: balance;
+}
+.cb-lp-testimonial__card {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
+  height: 100%;
+  padding: 2rem;
+}
+.cb-lp-testimonial__content {
+  font-size: var(--fs-450);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.cb-lp-testimonial__content p:last-child {
+  margin-bottom: 0;
+}
+.cb-lp-testimonial__name {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.cb-lp-testimonial__location {
+  color: var(--col-grey-900);
+  font-size: var(--fs-300);
+}
+
 body {
   color: var(--body-color);
 }

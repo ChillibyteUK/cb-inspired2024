@@ -1,0 +1,38 @@
+.cb-lp-testimonial {
+	padding: 4rem 0;
+
+	&__title {
+		margin-bottom: 3rem;
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	&__card {
+		background: #fff;
+		border-radius: 0.75rem;
+		box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
+		height: 100%;
+		padding: 2rem;
+	}
+
+	&__content {
+		font-size: var(--fs-450);
+		font-style: italic;
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__name {
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+	}
+
+	&__location {
+		color: var(--col-grey-900);
+		font-size: var(--fs-300);
+	}
+}

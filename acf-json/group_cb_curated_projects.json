@@ -3,6 +3,24 @@
     "title": "CB Curated Projects",
     "fields": [
         {
+            "key": "field_6a54fbafdcc94",
+            "label": "CB Curated Projects",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_cb_curated_projects_title",
             "label": "Title",
             "name": "title",
@@ -90,8 +108,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "display_title": "",
-    "allow_ai_access": false,
-    "ai_description": "",
-    "modified": 1783699608
+    "modified": 1783954362
 }

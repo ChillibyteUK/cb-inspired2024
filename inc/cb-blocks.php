@@ -17,6 +17,28 @@ function acf_blocks() {
 
         acf_register_block_type(
             array(
+                'name'            => 'cb_lp_testimonial',
+                'title'           => __( 'CB LP Testimonial' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'blocks/cb-lp-testimonial.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+					'color'     => array(
+						'gradients'  => false,
+						'text'       => true,
+						'background' => true,
+					),
+                ),
+            )
+        );
+
+        acf_register_block_type(
+            array(
                 'name'            => 'cb_curated_projects',
                 'title'           => __( 'CB Curated Projects' ),
                 'category'        => 'layout',
