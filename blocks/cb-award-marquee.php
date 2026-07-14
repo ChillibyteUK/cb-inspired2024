@@ -92,7 +92,10 @@ add_action(
                         x: -distance,
                         duration: Math.max(distance / 90, 18),
                         ease: 'none',
-                        repeat: -1
+                        onComplete: function () {
+                            gsap.set(track, { x: 0 });
+                            tween.restart(true);
+                        }
                     });
                 };
 

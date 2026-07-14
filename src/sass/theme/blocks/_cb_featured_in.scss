@@ -1,0 +1,25 @@
+.cb-featured-in {
+	padding: 4rem 0;
+
+	&__title {
+		margin-bottom: 3rem;
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	&__logos {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 3rem 4rem;
+		justify-content: center;
+	}
+
+	&__logo {
+		display: block;
+		height: clamp(2.5rem, 5vw, 4rem);
+		max-width: 12rem;
+		object-fit: contain;
+		width: auto;
+	}
+}

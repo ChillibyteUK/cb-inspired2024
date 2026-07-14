@@ -15,6 +15,45 @@ function acf_blocks() {
 
 		// INSERT NEW BLOCKS HERE.
 
+		acf_register_block_type(
+			array(
+				'name'            => 'cb_lp_contact_form',
+				'title'           => __( 'CB LP Contact Form' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-lp-contact-form.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+					'color'     => array(
+						'gradients'  => false,
+						'text'       => true,
+						'background' => true,
+					),
+				),
+			)
+		);
+
+        acf_register_block_type(
+            array(
+                'name'            => 'cb_featured_in',
+                'title'           => __( 'CB Featured In' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'blocks/cb-featured-in.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+                ),
+            )
+        );
+
         acf_register_block_type(
             array(
                 'name'            => 'cb_lp_testimonial',

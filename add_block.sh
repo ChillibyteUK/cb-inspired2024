@@ -1,7 +1,28 @@
 #!/bin/bash
 
-# Prompt for block name
-read -p "Enter block name: " block_name
+include_color=false
+
+while getopts ":c" opt; do
+  case "$opt" in
+    c)
+      include_color=true
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG"
+      echo "Usage: $0 [-c]"
+      exit 1
+      ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+# Prompt for block name (or use first positional argument)
+if [ -n "$1" ]; then
+  block_name="$1"
+else
+  read -p "Enter block name: " block_name
+fi
 
 # Exit if empty
 if [ -z "$block_name" ]; then
@@ -9,13 +30,13 @@ if [ -z "$block_name" ]; then
   exit 1
 fi
 
-# Convert to lowercase and replace spaces with underscores
-base_slug=$(echo "$block_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
-block_slug="${base_slug}"
+# Convert to lowercase and replace spaces
+block_slug=$(echo "$block_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+block_kebab=$(echo "$block_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
 
 # Define file paths
-php_file="./blocks/${block_slug}.php"
-scss_file="./src/sass/theme/blocks/_${base_slug}.scss"
+php_file="./blocks/${block_kebab}.php"
+scss_file="./src/sass/theme/blocks/_${block_slug}.scss"
 blocks_scss="./src/sass/theme/blocks/_blocks.scss"
 blocks_php="./inc/cb-blocks.php"
 acf_json_file="./acf-json/group_${block_slug}.json"
@@ -42,7 +63,9 @@ style_file="./style.css"
 package=$(grep "Text Domain:" "$style_file" | sed 's/.*Text Domain:[ ]*//')
 
 # Create files
-echo "<?php
+if [ "$include_color" = true ]; then
+  cat > "$php_file" <<EOF
+<?php
 /**
  * Block template for ${block_name}.
  *
@@ -50,42 +73,76 @@ echo "<?php
  */
 
 defined( 'ABSPATH' ) || exit;
-" > "$php_file"
+
+// Support Gutenberg color picker.
+\$bg         = ! empty( \$block['backgroundColor'] ) ? 'has-' . \$block['backgroundColor'] . '-background-color' : '';
+\$fg         = ! empty( \$block['textColor'] ) ? 'has-' . \$block['textColor'] . '-color' : '';
+\$section_id = \$block['anchor'] ?? null;
+\$extra      = \$block['className'] ?? 'py-5';
+
+?>
+<section class="${block_kebab} <?= esc_attr( trim( \$bg . ' ' . \$fg . ' ' . \$extra ) ); ?>" id="<?= esc_attr( \$section_id ); ?>">
+
+</section>
+EOF
+else
+  cat > "$php_file" <<EOF
+<?php
+/**
+ * Block template for ${block_name}.
+ *
+ * @package ${package}
+ */
+
+defined( 'ABSPATH' ) || exit;
+EOF
+fi
 
 touch "$scss_file"
 echo "Created: $php_file"
 echo "Created: $scss_file"
 
 # Append import to _blocks.scss
-if ! grep -q "@import '${base_slug}';" "$blocks_scss"; then
-  echo "@import '${base_slug}';" >> "$blocks_scss"
+if ! grep -q "@import '${block_slug}';" "$blocks_scss"; then
+  echo "@import '${block_slug}';" >> "$blocks_scss"
   echo "Added @import to $blocks_scss"
 else
   echo "Import already exists in $blocks_scss"
 fi
-
 # Define the marker comment to look for
 marker_comment="// INSERT NEW BLOCKS HERE."
+
+color_support=""
+if [ "$include_color" = true ]; then
+  color_support=$(cat <<'EOF'
+          'color'     => array(
+            'background' => true,
+            'text'       => true,
+          ),
+EOF
+)
+fi
 
 # Insert block registration code at the marker comment
 block_code=$(cat <<EOF
 
-        acf_register_block_type(
-            array(
-                'name'            => '${block_slug}',
-                'title'           => __( '${block_name}' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/${block_slug}.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => '${block_slug}',
+				'title'           => __( '${block_name}' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/${block_kebab}.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+          ${color_support}
+				),
+			)
+		);
 EOF
 )
 
@@ -113,31 +170,15 @@ else
 fi
 
 # Create ACF JSON
-now=$(date +%s)
-acf_json_file="./acf-json/group_${block_slug}.json"
-
 acf_json_content="{
   \"key\": \"group_${block_slug}\",
   \"title\": \"${block_name}\",
   \"fields\": [
     {
-      \"key\": \"field_${block_slug}\",
+      \"key\": \"field_${block_slug}_title\",
       \"label\": \"${block_name}\",
-      \"name\": \"\",
-      \"type\": \"message\",
-      \"instructions\": \"\",
-      \"required\": 0,
-      \"conditional_logic\": 0,
-      \"wrapper\": {
-        \"width\": \"\",
-        \"class\": \"\",
-        \"id\": \"\"
-      },
-      \"default_value\": \"\",
-      \"placeholder\": \"\",
-      \"prepend\": \"\",
-      \"append\": \"\",
-      \"maxlength\": \"\"
+      \"name\": \"title\",
+      \"type\": \"message\"
     }
   ],
   \"location\": [
@@ -145,20 +186,12 @@ acf_json_content="{
       {
         \"param\": \"block\",
         \"operator\": \"==\",
-        \"value\": \"acf/${block_slug}\"
+        \"value\": \"acf/${block_kebab}\"
       }
     ]
   ],
-  \"menu_order\": 0,
-  \"position\": \"normal\",
-  \"style\": \"default\",
-  \"label_placement\": \"top\",
-  \"instruction_placement\": \"label\",
-  \"hide_on_screen\": \"\",
-  \"active\": true,
-  \"description\": \"\",
-  \"show_in_rest\": 0,
-  \"modified\": ${now}
+  \"active\": 1,
+  \"description\": \"\"
 }"
 echo "$acf_json_content" > "$acf_json_file"
 echo "Created ACF field group JSON: $acf_json_file"

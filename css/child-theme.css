@@ -20675,6 +20675,7 @@ body .gform_wrapper .gform_footer .bg-blue-400 button[type=submit]:hover,
   color: inherit;
   margin-bottom: 0;
   max-width: 42rem;
+  text-wrap: pretty;
 }
 .cb-curated-projects__button {
   background-color: transparent;
@@ -20781,6 +20782,48 @@ body .gform_wrapper .gform_footer .bg-blue-400 button[type=submit]:hover,
 .cb-lp-testimonial__location {
   color: var(--col-grey-900);
   font-size: var(--fs-300);
+}
+
+.cb-featured-in {
+  padding: 4rem 0;
+}
+.cb-featured-in__title {
+  margin-bottom: 3rem;
+  text-align: center;
+  text-wrap: balance;
+}
+.cb-featured-in__logos {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem 4rem;
+  justify-content: center;
+}
+.cb-featured-in__logo {
+  display: block;
+  height: clamp(2.5rem, 5vw, 4rem);
+  max-width: 12rem;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: auto;
+}
+
+.cb-lp-contact-form {
+  padding: 4rem 0;
+}
+.cb-lp-contact-form__title {
+  font-size: var(--fs-900);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+.cb-lp-contact-form__intro {
+  font-size: var(--fs-400);
+  line-height: 1.7;
+  max-width: 40rem;
+}
+.cb-lp-contact-form__intro p:last-child {
+  margin-bottom: 0;
 }
 
 body {

@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 $block = isset( $block ) && is_array( $block ) ? $block : array();
 
-$title       = get_field( 'title' );
+$btitle      = get_field( 'title' );
 $subtitle    = get_field( 'subtitle' );
 $projects    = get_field( 'projects' );
 $block_id    = 'cb-curated-projects-' . ( $block['id'] ?? uniqid() );
@@ -70,9 +70,9 @@ $render_project_card = static function ( $project_id, $size = 'large', $modifier
         <div class="cb-curated-projects__header row align-items-end g-4">
             <div class="col-lg-8">
                 <?php
-                if ( $title ) {
+                if ( $btitle ) {
                     ?>
-                    <h2 class="cb-curated-projects__title"><?= esc_html( $title ); ?></h2>
+                    <h2 class="cb-curated-projects__title"><?= esc_html( $btitle ); ?></h2>
                     <?php
                 }
                 if ( $subtitle ) {

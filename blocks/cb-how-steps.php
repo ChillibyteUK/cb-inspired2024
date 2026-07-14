@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$title      = get_field( 'title' );
+$btitle     = get_field( 'title' );
 $steps      = get_field( 'steps' );
 $section_id = $block['anchor'] ?? '';
 $extra      = $block['className'] ?? 'py-5';
@@ -20,18 +20,18 @@ if ( empty( $steps ) || ! is_array( $steps ) ) {
 <section class="cb-how-steps has-bg--light <?= esc_attr( $extra ); ?>" id="<?= esc_attr( $section_id ); ?>">
     <div class="container">
         <?php
-        if ( $title ) {
+        if ( $btitle ) {
             ?>
             <div class="row">
                 <div class="col-12">
-                    <h2 class="cb-how-steps__title"><?= esc_html( $title ); ?></h2>
+                    <h2 class="cb-how-steps__title"><?= esc_html( $btitle ); ?></h2>
                 </div>
             </div>
             <?php
         }
         ?>
 
-        <div class="row g-4">
+        <div class="row g-4 pb-4">
             <?php
             foreach ( array_slice( $steps, 0, 3 ) as $index => $step ) {
                 ?>
