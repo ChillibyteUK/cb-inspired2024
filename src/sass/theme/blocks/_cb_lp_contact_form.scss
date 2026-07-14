@@ -1,5 +1,9 @@
 .cb-lp-contact-form {
-	padding: 4rem 0;
+	padding-top: 4rem;
+
+	.container {
+		padding-bottom: 4rem;
+	}
 
 	&__title {
 		font-size: var(--fs-900);

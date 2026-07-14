@@ -1,5 +1,9 @@
 .cb-lp-testimonial {
-	padding: 4rem 0;
+	padding-top: 4rem;
+
+	.container {
+		padding-bottom: 4rem;
+	}
 
 	&__title {
 		margin-bottom: 3rem;

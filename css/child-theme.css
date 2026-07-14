@@ -20752,7 +20752,10 @@ body .gform_wrapper .gform_footer .bg-blue-400 button[type=submit]:hover,
 }
 
 .cb-lp-testimonial {
-  padding: 4rem 0;
+  padding-top: 4rem;
+}
+.cb-lp-testimonial .container {
+  padding-bottom: 4rem;
 }
 .cb-lp-testimonial__title {
   margin-bottom: 3rem;
@@ -20809,7 +20812,10 @@ body .gform_wrapper .gform_footer .bg-blue-400 button[type=submit]:hover,
 }
 
 .cb-lp-contact-form {
-  padding: 4rem 0;
+  padding-top: 4rem;
+}
+.cb-lp-contact-form .container {
+  padding-bottom: 4rem;
 }
 .cb-lp-contact-form__title {
   font-size: var(--fs-900);
