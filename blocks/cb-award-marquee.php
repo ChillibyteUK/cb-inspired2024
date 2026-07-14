@@ -65,16 +65,38 @@ add_action(
                     return;
                 }
 
+                var viewport = section.querySelector('.cb-award-marquee__viewport');
                 var track = section.querySelector('.cb-award-marquee__track');
                 var set = section.querySelector('.cb-award-marquee__set');
+                var images = section.querySelectorAll('.cb-award-marquee__image');
 
-                if (!track || !set) {
+                if (!viewport || !track || !set) {
                     return;
                 }
 
                 section.dataset.marqueeReady = '1';
 
                 var tween;
+
+                var removeDynamicSets = function() {
+                    track.querySelectorAll('[data-marquee-clone="1"]').forEach(function(clone) {
+                        clone.remove();
+                    });
+                };
+
+                var ensureCoverage = function(distance) {
+                    var copiesNeeded = Math.ceil(viewport.offsetWidth / distance) + 1;
+                    var currentCopies = track.querySelectorAll('.cb-award-marquee__set').length;
+
+                    while (currentCopies < copiesNeeded) {
+                        var clone = set.cloneNode(true);
+
+                        clone.setAttribute('aria-hidden', 'true');
+                        clone.dataset.marqueeClone = '1';
+                        track.appendChild(clone);
+                        currentCopies += 1;
+                    }
+                };
 
                 var buildMarquee = function() {
                     var distance = set.offsetWidth;
@@ -87,20 +109,27 @@ add_action(
                         tween.kill();
                     }
 
+                    removeDynamicSets();
+                    ensureCoverage(distance);
+
                     gsap.set(track, { x: 0 });
                     tween = gsap.to(track, {
                         x: -distance,
                         duration: Math.max(distance / 90, 18),
                         ease: 'none',
-                        onComplete: function () {
-                            gsap.set(track, { x: 0 });
-                            tween.restart(true);
-                        }
+                        force3D: true,
+                        repeat: -1
                     });
                 };
 
                 buildMarquee();
+                window.addEventListener('load', buildMarquee);
                 window.addEventListener('resize', buildMarquee);
+                images.forEach(function(image) {
+                    if (!image.complete) {
+                        image.addEventListener('load', buildMarquee, { once: true });
+                    }
+                });
             });
         </script>
         <?php
