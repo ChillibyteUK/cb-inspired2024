@@ -20626,13 +20626,8 @@ body .gform_wrapper .gform_footer .bg-blue-400 .gform_button:hover,
 .cb-lp-hero__designers {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   margin-bottom: 1rem;
-}
-@media (max-width: 420px) {
-  .cb-lp-hero__designers {
-    grid-template-columns: 1fr;
-  }
 }
 .cb-lp-hero__designer {
   align-items: center;
