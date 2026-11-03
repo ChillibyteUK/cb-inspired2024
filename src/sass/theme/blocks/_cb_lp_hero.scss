@@ -65,6 +65,87 @@
 		.gform_button {
 			margin-bottom: 0;
 		}
+
+		// Needs to out-specify the extended `.btn` selector in _forms.scss.
+		.cb-lp-hero & .gform_footer button[type='submit'],
+		.cb-lp-hero & .gform_footer .gform_button {
+			display: block !important;
+			width: 100%;
+			min-width: 0 !important;
+			padding: 0.875rem 1.5rem;
+			text-transform: none !important;
+			font-size: var(--fs-400) !important;
+		}
+	}
+
+	&__form-header {
+		border-bottom: 1px solid var(--col-grey-600);
+		margin-bottom: 1.25rem;
+		padding-bottom: 1.25rem;
+	}
+
+	&__form-title {
+		color: var(--col-green-600);
+		font-size: var(--fs-600);
+		font-weight: var(--fw-900);
+		line-height: 1.2;
+		margin-bottom: 1rem;
+	}
+
+	&__designers {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		margin-bottom: 1rem;
+
+		@media (max-width: 420px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__designer {
+		align-items: center;
+		border: 1px solid var(--col-primary-400);
+		border-radius: 0.375rem;
+		color: inherit;
+		display: flex;
+		gap: 0.75rem;
+		line-height: 1.25;
+		padding: 0.75rem 1rem;
+		text-decoration: none;
+		transition: background-color var(--transition), color var(--transition);
+
+		i {
+			color: var(--col-green-600);
+			flex: 0 0 auto;
+			font-size: 1.25rem;
+		}
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--col-grey);
+			color: inherit;
+		}
+	}
+
+	&__designer-text {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	&__designer-name {
+		font-size: var(--fs-300);
+	}
+
+	&__designer-phone {
+		font-size: var(--fs-500);
+		font-weight: var(--fw-900);
+		white-space: nowrap;
+	}
+
+	&__form-intro {
+		margin-bottom: 0;
 	}
 
 	@media (max-width: 991.98px) {

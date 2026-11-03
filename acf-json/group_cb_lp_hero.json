@@ -106,6 +106,46 @@
       "new_lines": "br"
     },
     {
+      "key": "field_cb_lp_hero_form_title",
+      "label": "Form Title",
+      "name": "form_title",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "Heading shown above the phone numbers in the form panel.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Speak to a designer",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_cb_lp_hero_form_intro",
+      "label": "Form Intro",
+      "name": "form_intro",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "Short line shown under the phone numbers, above the form fields.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Or send your project details below and we will be in touch.",
+      "maxlength": "",
+      "rows": 2,
+      "placeholder": "",
+      "new_lines": "br"
+    },
+    {
       "key": "field_cb_lp_hero_gravity_form_id",
       "label": "Gravity Form ID",
       "name": "gravity_form_id",
